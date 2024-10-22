@@ -1,0 +1,9 @@
+<map id="src/include/models/DiscreteDistribution.hpp" name="src/include/models/DiscreteDistribution.hpp">
+<area shape="rect" id="Node000001" title="Arquivo de cabeçalho para a classe DiscreteDistribution." alt="" coords="149,5,314,48"/>
+<area shape="rect" id="Node000002" href="$_binomial_8hpp.html" title="Arquivo de cabeçalho para a classe Binomial." alt="" coords="5,96,136,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,58,109,98,107,93,179,54"/>
+<area shape="rect" id="Node000003" href="$_discrete_uniform_8hpp.html" title="Arquivo de cabeçalho para a classe DiscreteUniform." alt="" coords="159,96,304,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="234,64,234,96,229,96,229,64"/>
+<area shape="rect" id="Node000004" href="$_geometric_8hpp.html" title="Arquivo de cabeçalho para a classe Geometric." alt="" coords="328,96,458,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="284,54,357,93,354,98,282,58"/>
+</map>
