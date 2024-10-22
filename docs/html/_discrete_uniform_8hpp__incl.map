@@ -1,7 +1,0 @@
-<map id="src/include/models/DiscreteUniform.hpp" name="src/include/models/DiscreteUniform.hpp">
-<area shape="rect" id="Node000001" title="Arquivo de cabeçalho para a classe DiscreteUniform." alt="" coords="85,5,231,48"/>
-<area shape="rect" id="Node000002" href="$_discrete_distribution_8hpp.html" title="Arquivo de cabeçalho para a classe DiscreteDistribution." alt="" coords="5,96,167,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,50,109,86,105,82,137,47"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="191,96,269,123"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,47,211,82,207,86,175,50"/>
-</map>

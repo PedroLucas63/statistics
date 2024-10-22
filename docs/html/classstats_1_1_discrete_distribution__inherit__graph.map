@@ -1,9 +1,0 @@
-<map id="stats::DiscreteDistribution" name="stats::DiscreteDistribution">
-<area shape="rect" id="Node000001" title="Uma classe para representar uma distribuição discreta." alt="" coords="128,5,301,32"/>
-<area shape="rect" id="Node000002" href="$classstats_1_1_binomial.html" title="Uma classe para representar uma distribuição binomial." alt="" coords="5,80,114,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,41,88,82,86,77,172,37"/>
-<area shape="rect" id="Node000003" href="$classstats_1_1_discrete_uniform.html" title="Uma classe para representar uma distribuição discreta uniforme." alt="" coords="138,80,291,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,48,217,80,212,80,212,48"/>
-<area shape="rect" id="Node000004" href="$classstats_1_1_geometric.html" title="Uma classe para representar uma distribuição geométrica." alt="" coords="315,80,433,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="257,36,347,77,345,82,255,41"/>
-</map>
