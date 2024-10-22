@@ -1,0 +1,171 @@
+\doxysection{Discrete\+Uniform$<$ TYPE $>$ Class Template Reference}
+\label{class_discrete_uniform}\index{DiscreteUniform$<$ TYPE $>$@{DiscreteUniform$<$ TYPE $>$}}
+
+
+A class for representing a discrete uniform distribution.  
+
+
+
+
+{\ttfamily \#include $<$Discrete\+Uniform.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Discrete\+Uniform} (TYPE first\+Value, TYPE last\+Value)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxyref{Discrete\+Uniform}{p.}{class_discrete_uniform} class. \end{DoxyCompactList}\item 
+double \textbf{ get\+Probability} (TYPE value) const
+\begin{DoxyCompactList}\small\item\em Retrieves the probability of a given value. \end{DoxyCompactList}\item 
+\textbf{ Discrete\+Uniform} \& \textbf{ set\+Interval} (TYPE first\+Value, TYPE last\+Value)
+\begin{DoxyCompactList}\small\item\em Sets the interval of the discrete uniform distribution. \end{DoxyCompactList}\item 
+double \textbf{ mean} () const
+\begin{DoxyCompactList}\small\item\em Calculates the mean of the distribution. \end{DoxyCompactList}\item 
+double \textbf{ variance} () const
+\begin{DoxyCompactList}\small\item\em Calculates the variance of the distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class TYPE$>$\newline
+class Discrete\+Uniform$<$ TYPE $>$}
+A class for representing a discrete uniform distribution. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TYPE} & The type of the values. Must be a numeric type. \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \textbf{ 13} of file \textbf{ Discrete\+Uniform.\+hpp}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\index{DiscreteUniform$<$ TYPE $>$@{DiscreteUniform$<$ TYPE $>$}!DiscreteUniform@{DiscreteUniform}}
+\index{DiscreteUniform@{DiscreteUniform}!DiscreteUniform$<$ TYPE $>$@{DiscreteUniform$<$ TYPE $>$}}
+\doxysubsubsection{DiscreteUniform()}
+{\footnotesize\ttfamily \label{class_discrete_uniform_a1185056f55ef06fe83d567673a1b80d4} 
+template$<$class TYPE $>$ \\
+\textbf{ Discrete\+Uniform}$<$ TYPE $>$\textbf{ \+::\+Discrete\+Uniform} (\begin{DoxyParamCaption}\item[{TYPE}]{first\+Value}{, }\item[{TYPE}]{last\+Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxyref{Discrete\+Uniform}{p.}{class_discrete_uniform} class. 
+
+Initializes the \doxyref{Discrete\+Uniform}{p.}{class_discrete_uniform} distribution with a specified range [first\+Value, last\+Value].
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Value} & The first value in the range. \\
+\hline
+{\em last\+Value} & The last value in the range.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the first value is greater than the last value. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \textbf{ 44} of file \textbf{ Discrete\+Uniform.\+hpp}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\index{DiscreteUniform$<$ TYPE $>$@{DiscreteUniform$<$ TYPE $>$}!getProbability@{getProbability}}
+\index{getProbability@{getProbability}!DiscreteUniform$<$ TYPE $>$@{DiscreteUniform$<$ TYPE $>$}}
+\doxysubsubsection{getProbability()}
+{\footnotesize\ttfamily \label{class_discrete_uniform_a6d2e4dbc00ca52afac6d3be295b07336} 
+template$<$class TYPE $>$ \\
+double \textbf{ Discrete\+Uniform}$<$ TYPE $>$\+::get\+Probability (\begin{DoxyParamCaption}\item[{TYPE}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the probability of a given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to retrieve the probability of.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The probability of the given value. 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 56} of file \textbf{ Discrete\+Uniform.\+hpp}.
+
+\index{DiscreteUniform$<$ TYPE $>$@{DiscreteUniform$<$ TYPE $>$}!mean@{mean}}
+\index{mean@{mean}!DiscreteUniform$<$ TYPE $>$@{DiscreteUniform$<$ TYPE $>$}}
+\doxysubsubsection{mean()}
+{\footnotesize\ttfamily \label{class_discrete_uniform_a89b6d38b310c5ab5646a77f15a3a5fd6} 
+template$<$class TYPE $>$ \\
+double \textbf{ Discrete\+Uniform}$<$ TYPE $>$\+::mean (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the mean of the distribution. 
+
+\begin{DoxyReturn}{Returns}
+The mean of the distribution. 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 91} of file \textbf{ Discrete\+Uniform.\+hpp}.
+
+\index{DiscreteUniform$<$ TYPE $>$@{DiscreteUniform$<$ TYPE $>$}!setInterval@{setInterval}}
+\index{setInterval@{setInterval}!DiscreteUniform$<$ TYPE $>$@{DiscreteUniform$<$ TYPE $>$}}
+\doxysubsubsection{setInterval()}
+{\footnotesize\ttfamily \label{class_discrete_uniform_a0141a55bcca0c288c0052dc3154c713b} 
+template$<$class TYPE $>$ \\
+\textbf{ Discrete\+Uniform} \& \textbf{ Discrete\+Uniform}$<$ TYPE $>$\+::set\+Interval (\begin{DoxyParamCaption}\item[{TYPE}]{first\+Value}{, }\item[{TYPE}]{last\+Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the interval of the discrete uniform distribution. 
+
+Updates the range [first\+Value, last\+Value] of the distribution.
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Value} & The new first value of the range. \\
+\hline
+{\em last\+Value} & The new last value of the range.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the updated \doxyref{Discrete\+Uniform}{p.}{class_discrete_uniform} object.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the first value is greater than the last value. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \textbf{ 77} of file \textbf{ Discrete\+Uniform.\+hpp}.
+
+\index{DiscreteUniform$<$ TYPE $>$@{DiscreteUniform$<$ TYPE $>$}!variance@{variance}}
+\index{variance@{variance}!DiscreteUniform$<$ TYPE $>$@{DiscreteUniform$<$ TYPE $>$}}
+\doxysubsubsection{variance()}
+{\footnotesize\ttfamily \label{class_discrete_uniform_a3f1498a257277ec38d8455223eb39074} 
+template$<$class TYPE $>$ \\
+double \textbf{ Discrete\+Uniform}$<$ TYPE $>$\+::variance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the variance of the distribution. 
+
+\begin{DoxyReturn}{Returns}
+The variance of the distribution. 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 98} of file \textbf{ Discrete\+Uniform.\+hpp}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/include/discrete/Discrete\+Uniform.\+hpp\end{DoxyCompactItemize}

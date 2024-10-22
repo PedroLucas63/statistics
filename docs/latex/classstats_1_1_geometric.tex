@@ -1,0 +1,174 @@
+\doxysection{Referência da Classe stats\+::Geometric}
+\hypertarget{classstats_1_1_geometric}{}\label{classstats_1_1_geometric}\index{stats::Geometric@{stats::Geometric}}
+
+
+Uma classe para representar uma distribuição geométrica.  
+
+
+
+
+{\ttfamily \#include $<$Geometric.\+hpp$>$}
+
+
+
+Diagrama de hierarquia da classe stats\+::Geometric\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classstats_1_1_geometric__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para stats\+::Geometric\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classstats_1_1_geometric__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstats_1_1_geometric_a4cdaa04502a7aacb619277770bbd9a1e}{Geometric}} (double probability\+Of\+Success)
+\begin{DoxyCompactList}\small\item\em Construtor para o objeto \doxylink{classstats_1_1_geometric}{Geometric} com a probabilidade de sucesso. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classstats_1_1_geometric_a6979763eb2aab79c2d787ff185d383ae}{get\+Probability}} (int replicas\+Made) const
+\begin{DoxyCompactList}\small\item\em Calcula a probabilidade de um dado número de tentativas antes de obter o primeiro sucesso. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstats_1_1_geometric}{Geometric}} \& \mbox{\hyperlink{classstats_1_1_geometric_a1543eece84d3537c5c8162df08701a0f}{set\+Probability\+Of\+Success}} (double probability\+Of\+Success)
+\begin{DoxyCompactList}\small\item\em Define a probabilidade de sucesso da distribuição geométrica. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classstats_1_1_geometric_a384479b12dea81fd41ae7f7344ec48ad}{mean}} () const
+\begin{DoxyCompactList}\small\item\em Calcula a média da distribuição. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classstats_1_1_geometric_a4650787fe93b694cb5f8ccdd7b92c0ea}{variance}} () const
+\begin{DoxyCompactList}\small\item\em Calcula a variância da distribuição. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membros Públicos herdados de \mbox{\hyperlink{classstats_1_1_discrete_distribution}{stats\+::\+Discrete\+Distribution}}}
+
+
+\doxysubsection{Descrição detalhada}
+Uma classe para representar uma distribuição geométrica. 
+
+A distribuição geométrica é uma distribuição de probabilidade discreta que representa a probabilidade de realizar N tentativas antes de obter sucesso.
+
+\begin{DoxySeeAlso}{Veja também}
+\href{https://en.wikipedia.org/wiki/Geometric_distribution}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Geometric\+\_\+distribution}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Construtores e Destrutores}
+\Hypertarget{classstats_1_1_geometric_a4cdaa04502a7aacb619277770bbd9a1e}\index{stats::Geometric@{stats::Geometric}!Geometric@{Geometric}}
+\index{Geometric@{Geometric}!stats::Geometric@{stats::Geometric}}
+\doxysubsubsection{\texorpdfstring{Geometric()}{Geometric()}}
+{\footnotesize\ttfamily \label{classstats_1_1_geometric_a4cdaa04502a7aacb619277770bbd9a1e} 
+stats\+::\+Geometric\+::\+Geometric (\begin{DoxyParamCaption}\item[{double}]{probability\+Of\+Success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor para o objeto \doxylink{classstats_1_1_geometric}{Geometric} com a probabilidade de sucesso. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em probability\+Of\+Success} & A probabilidade de sucesso.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceções}
+{\em std\+::runtime\+\_\+error} & se a probabilidade de sucesso for menor que 0 ou maior que 1. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{classstats_1_1_geometric_a6979763eb2aab79c2d787ff185d383ae}\index{stats::Geometric@{stats::Geometric}!getProbability@{getProbability}}
+\index{getProbability@{getProbability}!stats::Geometric@{stats::Geometric}}
+\doxysubsubsection{\texorpdfstring{getProbability()}{getProbability()}}
+{\footnotesize\ttfamily \label{classstats_1_1_geometric_a6979763eb2aab79c2d787ff185d383ae} 
+double stats\+::\+Geometric\+::get\+Probability (\begin{DoxyParamCaption}\item[{int}]{replicas\+Made}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calcula a probabilidade de um dado número de tentativas antes de obter o primeiro sucesso. 
+
+A probabilidade de um dado número de tentativas antes de obter o primeiro sucesso é dada pela probabilidade de erro (1 -\/ probabilidade de sucesso) elevado ao número de tentativas menos 1, vezes a probabilidade de sucesso.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em replicas\+Made} & O número de tentativas feitas.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A probabilidade de um dado número de tentativas antes de obter o primeiro sucesso. 
+\end{DoxyReturn}
+
+
+Implementa \mbox{\hyperlink{classstats_1_1_discrete_distribution_a4759c515929cb7e26f4c454740fe98a5}{stats\+::\+Discrete\+Distribution}}.
+
+\Hypertarget{classstats_1_1_geometric_a384479b12dea81fd41ae7f7344ec48ad}\index{stats::Geometric@{stats::Geometric}!mean@{mean}}
+\index{mean@{mean}!stats::Geometric@{stats::Geometric}}
+\doxysubsubsection{\texorpdfstring{mean()}{mean()}}
+{\footnotesize\ttfamily \label{classstats_1_1_geometric_a384479b12dea81fd41ae7f7344ec48ad} 
+double stats\+::\+Geometric\+::mean (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calcula a média da distribuição. 
+
+A média da distribuição geométrica é dada pelo inverso da probabilidade de sucesso.
+
+\begin{DoxyReturn}{Retorna}
+A média da distribuição. 
+\end{DoxyReturn}
+
+
+Implementa \mbox{\hyperlink{classstats_1_1_discrete_distribution_a3852539f59a449400c0543543e4d9473}{stats\+::\+Discrete\+Distribution}}.
+
+\Hypertarget{classstats_1_1_geometric_a1543eece84d3537c5c8162df08701a0f}\index{stats::Geometric@{stats::Geometric}!setProbabilityOfSuccess@{setProbabilityOfSuccess}}
+\index{setProbabilityOfSuccess@{setProbabilityOfSuccess}!stats::Geometric@{stats::Geometric}}
+\doxysubsubsection{\texorpdfstring{setProbabilityOfSuccess()}{setProbabilityOfSuccess()}}
+{\footnotesize\ttfamily \label{classstats_1_1_geometric_a1543eece84d3537c5c8162df08701a0f} 
+\mbox{\hyperlink{classstats_1_1_geometric}{Geometric}} \& stats\+::\+Geometric\+::set\+Probability\+Of\+Success (\begin{DoxyParamCaption}\item[{double}]{probability\+Of\+Success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define a probabilidade de sucesso da distribuição geométrica. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em probability\+Of\+Success} & A probabilidade de sucesso.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma referência para o objeto.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceções}
+{\em std\+::runtime\+\_\+error} & se a probabilidade de sucesso for menor que 0 ou maior que 1. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classstats_1_1_geometric_a4650787fe93b694cb5f8ccdd7b92c0ea}\index{stats::Geometric@{stats::Geometric}!variance@{variance}}
+\index{variance@{variance}!stats::Geometric@{stats::Geometric}}
+\doxysubsubsection{\texorpdfstring{variance()}{variance()}}
+{\footnotesize\ttfamily \label{classstats_1_1_geometric_a4650787fe93b694cb5f8ccdd7b92c0ea} 
+double stats\+::\+Geometric\+::variance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calcula a variância da distribuição. 
+
+A variância da distribuição geométrica é dada pelo inverso da probabilidade de sucesso ao quadrado, vezes a probabilidade de erro (1
+\begin{DoxyItemize}
+\item probabilidade de sucesso).
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Retorna}
+A variância da distribuição. 
+\end{DoxyReturn}
+
+
+Implementa \mbox{\hyperlink{classstats_1_1_discrete_distribution_ad6c651a325f9b856a4de52bf7d87ce0d}{stats\+::\+Discrete\+Distribution}}.
+
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+src/include/models/\mbox{\hyperlink{_geometric_8hpp}{Geometric.\+hpp}}\end{DoxyCompactItemize}

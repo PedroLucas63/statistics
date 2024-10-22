@@ -1,0 +1,205 @@
+\doxysection{Referência do Template da Classe Discrete\texorpdfstring{$<$}{<} TYPE \texorpdfstring{$>$}{>}}
+\hypertarget{class_discrete}{}\label{class_discrete}\index{Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}}
+
+
+Uma classe para representar uma distribuição de dados discretos.  
+
+
+
+
+{\ttfamily \#include $<$Discrete.\+hpp$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_discrete_a9ec9797a8a85ec68c38138eac9cd46f6}{Discrete}} (std\+::unordered\+\_\+map$<$ TYPE, double $>$ probabilities)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_discrete}{Discrete} class. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_discrete_a15bf1f18bb76f9d14313b5d932164458}{get\+Probability}} (TYPE value) const
+\begin{DoxyCompactList}\small\item\em Retrieves the probability of a given value. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ TYPE, double $>$ \mbox{\hyperlink{class_discrete_a4ddb81cd5aa0c89fc7cbd705d396880c}{get\+Probabilities}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the probability distribution. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_discrete}{Discrete}} \& \mbox{\hyperlink{class_discrete_a7ba3a169165603ac42e80c0fb4990545}{set\+Probabilities}} (std\+::unordered\+\_\+map$<$ TYPE, double $>$ probabilities)
+\begin{DoxyCompactList}\small\item\em Sets the probability distribution. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_discrete_a93e18f96e474269c1881fae10c32cdfd}{mean}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the mean of the distribution. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_discrete_a401c200897d1eac25b769bc2fd622428}{variance}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the variance of the distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Membros protegidos}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_discrete_a2236be702570d1d1910e457c99f39cbe}{sum\+Of\+Probabilities}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the sum of all probabilities in the distribution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_discrete_aa5ef0af5b59335f36cd451b4e9f62afe}{check\+Probabilities}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the probabilities sum to 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_discrete_a9ce6f5f3f3f3ba0542980c03a5016c88}\label{class_discrete_a9ce6f5f3f3f3ba0542980c03a5016c88} 
+std\+::unordered\+\_\+map$<$ TYPE, double $>$ {\bfseries probabilities}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+\subsubsection*{template$<$typename TYPE$>$\newline
+class Discrete$<$ TYPE $>$}
+Uma classe para representar uma distribuição de dados discretos. 
+
+
+\begin{DoxyTemplParams}{Parâmetros do template}
+{\em TYPE} & The type of the values. Must be a numeric type. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Construtores e Destrutores}
+\Hypertarget{class_discrete_a9ec9797a8a85ec68c38138eac9cd46f6}\index{Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}!Discrete@{Discrete}}
+\index{Discrete@{Discrete}!Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{Discrete()}{Discrete()}}
+{\footnotesize\ttfamily \label{class_discrete_a9ec9797a8a85ec68c38138eac9cd46f6} 
+template$<$typename TYPE $>$ \\
+\mbox{\hyperlink{class_discrete}{Discrete}}$<$ TYPE $>$\mbox{\hyperlink{class_discrete}{\+::\+Discrete}} (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+map$<$ TYPE, double $>$}]{probabilities}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxylink{class_discrete}{Discrete} class. 
+
+Initializes the \doxylink{class_discrete}{Discrete} class with a given probability distribution.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em probabilities} & A map of values to their respective probabilities.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceções}
+{\em std\+::runtime\+\_\+error} & if the sum of probabilities is not equal to 1. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{class_discrete_aa5ef0af5b59335f36cd451b4e9f62afe}\index{Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}!checkProbabilities@{checkProbabilities}}
+\index{checkProbabilities@{checkProbabilities}!Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{checkProbabilities()}{checkProbabilities()}}
+{\footnotesize\ttfamily \label{class_discrete_aa5ef0af5b59335f36cd451b4e9f62afe} 
+template$<$typename TYPE $>$ \\
+void \mbox{\hyperlink{class_discrete}{Discrete}}$<$ TYPE $>$\+::check\+Probabilities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Checks if the probabilities sum to 1. 
+
+
+\begin{DoxyExceptions}{Exceções}
+{\em std\+::runtime\+\_\+error} & if the sum of probabilities is not equal to 1. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_discrete_a4ddb81cd5aa0c89fc7cbd705d396880c}\index{Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}!getProbabilities@{getProbabilities}}
+\index{getProbabilities@{getProbabilities}!Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{getProbabilities()}{getProbabilities()}}
+{\footnotesize\ttfamily \label{class_discrete_a4ddb81cd5aa0c89fc7cbd705d396880c} 
+template$<$typename TYPE $>$ \\
+std\+::unordered\+\_\+map$<$ TYPE, double $>$ \mbox{\hyperlink{class_discrete}{Discrete}}$<$ TYPE $>$\+::get\+Probabilities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the probability distribution. 
+
+\begin{DoxyReturn}{Retorna}
+A map of values to their respective probabilities. 
+\end{DoxyReturn}
+\Hypertarget{class_discrete_a15bf1f18bb76f9d14313b5d932164458}\index{Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}!getProbability@{getProbability}}
+\index{getProbability@{getProbability}!Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{getProbability()}{getProbability()}}
+{\footnotesize\ttfamily \label{class_discrete_a15bf1f18bb76f9d14313b5d932164458} 
+template$<$typename TYPE $>$ \\
+double \mbox{\hyperlink{class_discrete}{Discrete}}$<$ TYPE $>$\+::get\+Probability (\begin{DoxyParamCaption}\item[{TYPE}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the probability of a given value. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & The value to retrieve the probability of.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+The probability of the given value.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceções}
+{\em std\+::out\+\_\+of\+\_\+range} & if the value does not exist in the distribution. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_discrete_a93e18f96e474269c1881fae10c32cdfd}\index{Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}!mean@{mean}}
+\index{mean@{mean}!Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{mean()}{mean()}}
+{\footnotesize\ttfamily \label{class_discrete_a93e18f96e474269c1881fae10c32cdfd} 
+template$<$typename TYPE $>$ \\
+double \mbox{\hyperlink{class_discrete}{Discrete}}$<$ TYPE $>$\+::mean (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the mean of the distribution. 
+
+\begin{DoxyReturn}{Retorna}
+The mean of the distribution. 
+\end{DoxyReturn}
+\Hypertarget{class_discrete_a7ba3a169165603ac42e80c0fb4990545}\index{Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}!setProbabilities@{setProbabilities}}
+\index{setProbabilities@{setProbabilities}!Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{setProbabilities()}{setProbabilities()}}
+{\footnotesize\ttfamily \label{class_discrete_a7ba3a169165603ac42e80c0fb4990545} 
+template$<$typename TYPE $>$ \\
+\mbox{\hyperlink{class_discrete}{Discrete}} \& \mbox{\hyperlink{class_discrete}{Discrete}}$<$ TYPE $>$\+::set\+Probabilities (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+map$<$ TYPE, double $>$}]{probabilities}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the probability distribution. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em probabilities} & A map of values to their respective probabilities.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A reference to the \doxylink{class_discrete}{Discrete} object.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceções}
+{\em std\+::runtime\+\_\+error} & if the sum of probabilities is not equal to 1. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_discrete_a2236be702570d1d1910e457c99f39cbe}\index{Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}!sumOfProbabilities@{sumOfProbabilities}}
+\index{sumOfProbabilities@{sumOfProbabilities}!Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{sumOfProbabilities()}{sumOfProbabilities()}}
+{\footnotesize\ttfamily \label{class_discrete_a2236be702570d1d1910e457c99f39cbe} 
+template$<$typename TYPE $>$ \\
+double \mbox{\hyperlink{class_discrete}{Discrete}}$<$ TYPE $>$\+::sum\+Of\+Probabilities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Calculates the sum of all probabilities in the distribution. 
+
+\begin{DoxyReturn}{Retorna}
+The sum of the probabilities. 
+\end{DoxyReturn}
+\Hypertarget{class_discrete_a401c200897d1eac25b769bc2fd622428}\index{Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}!variance@{variance}}
+\index{variance@{variance}!Discrete$<$ TYPE $>$@{Discrete$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{variance()}{variance()}}
+{\footnotesize\ttfamily \label{class_discrete_a401c200897d1eac25b769bc2fd622428} 
+template$<$typename TYPE $>$ \\
+double \mbox{\hyperlink{class_discrete}{Discrete}}$<$ TYPE $>$\+::variance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the variance of the distribution. 
+
+\begin{DoxyReturn}{Retorna}
+The variance of the distribution. 
+\end{DoxyReturn}
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+src/include/models/discrete/Discrete.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,151 @@
+\doxysection{Geometric Class Reference}
+\label{class_geometric}\index{Geometric@{Geometric}}
+
+
+A class for representing a geometric distribution.  
+
+
+
+
+{\ttfamily \#include $<$Geometric.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Geometric} (double probability\+Of\+Success)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxyref{Geometric}{p.}{class_geometric} class. \end{DoxyCompactList}\item 
+double \textbf{ get\+Probability} (int replicas\+Made) const
+\begin{DoxyCompactList}\small\item\em Calculates the probability of success after a certain number of replicas made. \end{DoxyCompactList}\item 
+\textbf{ Geometric} \& \textbf{ set\+Probability\+Of\+Success} (double probability\+Of\+Success)
+\begin{DoxyCompactList}\small\item\em Sets the probability of success of a single trial. \end{DoxyCompactList}\item 
+double \textbf{ mean} () const
+\begin{DoxyCompactList}\small\item\em Calculates the mean of the distribution. \end{DoxyCompactList}\item 
+double \textbf{ variance} () const
+\begin{DoxyCompactList}\small\item\em Calculates the variance of the geometric distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for representing a geometric distribution. 
+
+Definition at line \textbf{ 11} of file \textbf{ Geometric.\+hpp}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\index{Geometric@{Geometric}!Geometric@{Geometric}}
+\index{Geometric@{Geometric}!Geometric@{Geometric}}
+\doxysubsubsection{Geometric()}
+{\footnotesize\ttfamily \label{class_geometric_a50d10f55b06fdaaa0802379157b42b43} 
+Geometric\+::\+Geometric (\begin{DoxyParamCaption}\item[{double}]{probability\+Of\+Success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxyref{Geometric}{p.}{class_geometric} class. 
+
+Initializes the \doxyref{Geometric}{p.}{class_geometric} class with a given probability of success.
+
+
+\begin{DoxyParams}{Parameters}
+{\em probability\+Of\+Success} & The probability of success of a single trial.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the probability of success is not between 0 and 1. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \textbf{ 40} of file \textbf{ Geometric.\+hpp}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\index{Geometric@{Geometric}!getProbability@{getProbability}}
+\index{getProbability@{getProbability}!Geometric@{Geometric}}
+\doxysubsubsection{getProbability()}
+{\footnotesize\ttfamily \label{class_geometric_a3ca85b653d5ccda9e839bb3f470cb8b4} 
+double Geometric\+::get\+Probability (\begin{DoxyParamCaption}\item[{int}]{replicas\+Made}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the probability of success after a certain number of replicas made. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em replicas\+Made} & The number of replicas made.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The probability of success after the given number of replicas made. 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 54} of file \textbf{ Geometric.\+hpp}.
+
+\index{Geometric@{Geometric}!mean@{mean}}
+\index{mean@{mean}!Geometric@{Geometric}}
+\doxysubsubsection{mean()}
+{\footnotesize\ttfamily \label{class_geometric_a422d1923a2910a5dfa69fda0e9a6059a} 
+double Geometric\+::mean (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the mean of the distribution. 
+
+\begin{DoxyReturn}{Returns}
+The mean value of the distribution. 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 85} of file \textbf{ Geometric.\+hpp}.
+
+\index{Geometric@{Geometric}!setProbabilityOfSuccess@{setProbabilityOfSuccess}}
+\index{setProbabilityOfSuccess@{setProbabilityOfSuccess}!Geometric@{Geometric}}
+\doxysubsubsection{setProbabilityOfSuccess()}
+{\footnotesize\ttfamily \label{class_geometric_a77e061f254d7fc5cb1da4aa2f8945082} 
+\textbf{ Geometric} \& Geometric\+::set\+Probability\+Of\+Success (\begin{DoxyParamCaption}\item[{double}]{probability\+Of\+Success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the probability of success of a single trial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em probability\+Of\+Success} & The probability of success of a single trial.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the current \doxyref{Geometric}{p.}{class_geometric} distribution.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the probability of success is not between 0 and 1. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \textbf{ 73} of file \textbf{ Geometric.\+hpp}.
+
+\index{Geometric@{Geometric}!variance@{variance}}
+\index{variance@{variance}!Geometric@{Geometric}}
+\doxysubsubsection{variance()}
+{\footnotesize\ttfamily \label{class_geometric_ab962584dadc1f4d3c1db8d514639af5d} 
+double Geometric\+::variance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the variance of the geometric distribution. 
+
+\begin{DoxyReturn}{Returns}
+The variance of the distribution. 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 92} of file \textbf{ Geometric.\+hpp}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/include/discrete/Geometric.\+hpp\end{DoxyCompactItemize}

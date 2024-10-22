@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__discrete_distribution_8hpp" xml:lang="pt-BR">
+<title>Referência do Arquivo src/include/models/DiscreteDistribution.hpp</title>
+<indexterm><primary>src/include/models/DiscreteDistribution.hpp</primary></indexterm>
+<para>
+
+<para>Arquivo de cabeçalho para a classe DiscreteDistribution. </para>
+ 
+</para>
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com esse arquivo:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_discrete_distribution_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Componentes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classstats_1_1_discrete_distribution">stats::DiscreteDistribution</link></para>
+
+<para>Uma classe para representar uma distribuição discreta. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descrição detalhada</title>
+
+<para>Arquivo de cabeçalho para a classe DiscreteDistribution. </para>
+
+<para><formalpara><title>Autor</title>
+
+<para>Pedro Lucas (<link xlink:href="mailto:pedrolucas.jsrn@gmail.com">pedrolucas.jsrn@gmail.com</link>) </para>
+</formalpara>
+<formalpara><title>Versão</title>
+
+<para>1.0 </para>
+</formalpara>
+<formalpara><title>Data</title>
+
+<para>2024-10-22</para>
+</formalpara>
+<formalpara><title>Copyright</title>
+
+<para>Copyright (c) 2024 </para>
+</formalpara>
+</para>
+</section>
+</section>

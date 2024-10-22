@@ -1,0 +1,147 @@
+\doxysection{Statistics.\+hpp}
+\hypertarget{_statistics_8hpp_source}{}\label{_statistics_8hpp_source}\index{src/include/Statistics.hpp@{src/include/Statistics.hpp}}
+\mbox{\hyperlink{_statistics_8hpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ STATISTICS\_HPP\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ STATISTICS\_HPP\_}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }stats\ \{}
+\DoxyCodeLine{00031\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TYPE>}
+\DoxyCodeLine{00032\ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classstats_1_1_statistics}{Statistics}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_arithmetic\_v<TYPE>,\ \textcolor{stringliteral}{"{}TYPE\ must\ be\ a\ numeric\ type"{}});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ std::vector<TYPE>\ values;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ populationData;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ensureNotEmpty()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.empty())\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Values\ are\ empty"{}});}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_statistics_a4478cf7c0646a7246613d86bdbb83e53}{Statistics}}(\textcolor{keywordtype}{bool}\ populationData\ =\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ :\ populationData(populationData)\ \{\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ItInput,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ =\ \textcolor{keyword}{typename}\ std::iterator\_traits<ItInput>::iterator\_category>}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_statistics_a1f50dd9b77aa94d3c158e159101e76eb}{Statistics}}(ItInput\ first,\ ItInput\ last,\ \textcolor{keywordtype}{bool}\ populationData\ =\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ :\ populationData(populationData)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_statistics_a5868d8066a92bba4f2a79750b8787acb}{setValues}}(first,\ last);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_statistics_a24d21847d0dc97776fcad300f3eb228a}{Statistics}}(std::initializer\_list<TYPE>\ list,\ \textcolor{keywordtype}{bool}\ populationData\ =\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ :\ populationData(populationData)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_statistics_a5868d8066a92bba4f2a79750b8787acb}{setValues}}(list);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ std::vector<TYPE>\ \mbox{\hyperlink{classstats_1_1_statistics_aedaf64ac5f10e910f0d139bda96a6e4a}{getValues}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ values;\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classstats_1_1_statistics_a6ab1698a69d1c46e50894a14879d6518}{isPopulationData}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ populationData;\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ItInput,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ =\ \textcolor{keyword}{typename}\ std::iterator\_traits<ItInput>::iterator\_category>}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_statistics}{Statistics}}\&\ \mbox{\hyperlink{classstats_1_1_statistics_a5868d8066a92bba4f2a79750b8787acb}{setValues}}(ItInput\ first,\ ItInput\ last)\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ values.assign(first,\ last);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_statistics}{Statistics}}\&\ \mbox{\hyperlink{classstats_1_1_statistics_a7f65ade022fe9da4d6ea4ec5fc73a19d}{setValues}}(std::initializer\_list<TYPE>\ list)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ values.assign(list);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_statistics}{Statistics}}\&\ \mbox{\hyperlink{classstats_1_1_statistics_adccc7acbcdc9405a0e28988418360b21}{setPopulationData}}(\textcolor{keywordtype}{bool}\ populationData\ =\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ this-\/>populationData\ =\ populationData;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classstats_1_1_statistics_a5d3a394412a143a7e63378ebdf6497a1}{size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ values.size();\ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_statistics_a15a337957ee8267406a80b8e92df4c51}{calculateSum}}(std::function<\textcolor{keywordtype}{double}(TYPE)>\ function}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ =\ [](TYPE\ value)\ \{\ \textcolor{keywordflow}{return}\ value;\ \})\ \textcolor{keyword}{const}\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sum\ =\ 0;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \textcolor{keyword}{const}\&\ value\ :\ values)\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ function(value);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_statistics_a87940e9555c682df9c1a04b7073fe0e3}{mean}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ values.empty()\ ?\ 0\ :\ \mbox{\hyperlink{classstats_1_1_statistics_a15a337957ee8267406a80b8e92df4c51}{calculateSum}}()\ /\ \mbox{\hyperlink{classstats_1_1_statistics_a5d3a394412a143a7e63378ebdf6497a1}{size}}();}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_statistics_ab4522784ff98a9388b310fdda18f2bfb}{median}}()\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ ensureNotEmpty();}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ std::sort(values.begin(),\ values.end());}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mid\ =\ values.size()\ /\ 2;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ values.size()\ \%\ 2\ ==\ 0}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(values[mid\ -\/\ 1]\ +\ values[mid])\ /\ 2}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(values[mid]);}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ TYPE\ \mbox{\hyperlink{classstats_1_1_statistics_a1bde50be330ea9ed5d1aee3fc19f6293}{mode}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ ensureNotEmpty();}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ std::unordered\_map<TYPE,\ int>\ frequency;}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \textcolor{keyword}{const}\&\ value\ :\ values)\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ ++frequency[value];}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::max\_element(frequency.begin(),}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ frequency.end(),}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{auto}\ \textcolor{keyword}{const}\&\ a,\ \textcolor{keyword}{auto}\ \textcolor{keyword}{const}\&\ b)\ \{\ return\ a.second\ <\ b.second;\ \})}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ -\/>first;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00243\ \ \ \ \ \ \ TYPE\ \mbox{\hyperlink{classstats_1_1_statistics_a3b51b0ddefd7a41132bb963dca80595c}{amplitude}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ ensureNotEmpty();}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [minValue,\ maxValue]}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ =\ std::minmax\_element(values.begin(),\ values.end());}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *maxValue\ -\/\ *minValue;}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_statistics_a3ecbdb096e994586cd0441def847db5c}{variance}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values.empty())\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ meanOfValues\ =\ \mbox{\hyperlink{classstats_1_1_statistics_a87940e9555c682df9c1a04b7073fe0e3}{mean}}();}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sumOfValues\ =\ \mbox{\hyperlink{classstats_1_1_statistics_a15a337957ee8267406a80b8e92df4c51}{calculateSum}}([meanOfValues](TYPE\ value)\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::pow(value\ -\/\ meanOfValues,\ 2);}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ populationData\ ?\ sumOfValues\ /\ \mbox{\hyperlink{classstats_1_1_statistics_a5d3a394412a143a7e63378ebdf6497a1}{size}}()}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ sumOfValues\ /\ (\mbox{\hyperlink{classstats_1_1_statistics_a5d3a394412a143a7e63378ebdf6497a1}{size}}()\ -\/\ 1);}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_statistics_ae84330f13ceb0dcf26ce853596bc4b95}{standardDeviation}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::sqrt(\mbox{\hyperlink{classstats_1_1_statistics_a3ecbdb096e994586cd0441def847db5c}{variance}}());\ \}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_statistics_a344e0dec8df89d8b0014d90cd1023cea}{coefficientOfVariation}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classstats_1_1_statistics_a87940e9555c682df9c1a04b7073fe0e3}{mean}}()\ ==\ 0\ ?\ 0\ :\ \mbox{\hyperlink{classstats_1_1_statistics_ae84330f13ceb0dcf26ce853596bc4b95}{standardDeviation}}()\ /\ \mbox{\hyperlink{classstats_1_1_statistics_a87940e9555c682df9c1a04b7073fe0e3}{mean}}();}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00295\ \ \ \ \};}
+\DoxyCodeLine{00296\ \}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

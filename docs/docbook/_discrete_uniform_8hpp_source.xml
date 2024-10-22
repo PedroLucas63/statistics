@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__discrete_uniform_8hpp_source" xml:lang="pt-BR">
+<title>DiscreteUniform.hpp</title>
+<indexterm><primary>src/include/models/DiscreteUniform.hpp</primary></indexterm>
+Ir para a documentação desse arquivo.<programlisting linenumbering="unnumbered">1 
+12 <emphasis role="preprocessor">#ifndef&#32;DISCRETE_UNIFORM_HPP_</emphasis>
+13 <emphasis role="preprocessor">#define&#32;DISCRETE_UNIFORM_HPP_</emphasis>
+14 
+15 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__discrete_distribution_8hpp">DiscreteDistribution.hpp</link>&quot;</emphasis>
+16 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+17 
+18 <emphasis role="keyword">namespace&#32;</emphasis>stats&#32;{
+28 &#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classstats_1_1_discrete_uniform">DiscreteUniform</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classstats_1_1_discrete_distribution">DiscreteDistribution</link>&#32;{
+29 &#32;&#32;<emphasis role="keyword">private</emphasis>:
+30 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;firstValue,&#32;lastValue;
+31 
+37 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;checkInterval()&#32;{
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(firstValue&#32;&gt;&#32;lastValue)&#32;{
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;First&#32;value&#32;is&#32;greater&#32;than&#32;last&#32;value&quot;</emphasis>);
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+41 &#32;&#32;&#32;&#32;&#32;&#32;}
+42 
+43 &#32;&#32;<emphasis role="keyword">public</emphasis>:
+53 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classstats_1_1_discrete_uniform_1abf35295e61b43a8a3499ffa8a96a1917">DiscreteUniform</link>(<emphasis role="keywordtype">int</emphasis>&#32;firstValue,&#32;<emphasis role="keywordtype">int</emphasis>&#32;lastValue)
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;firstValue(firstValue),&#32;lastValue(lastValue)&#32;{
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;checkInterval();
+56 &#32;&#32;&#32;&#32;&#32;&#32;}
+57 
+66 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classstats_1_1_discrete_uniform_1ae79035017f222ca8612c807b455e075c">getProbability</link>(<emphasis role="keywordtype">int</emphasis>&#32;value)<emphasis role="keyword">&#32;const&#32;</emphasis>{
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(value&#32;&lt;&#32;firstValue&#32;||&#32;value&#32;&gt;&#32;lastValue)&#32;{
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+70 
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1.0&#32;/&#32;(lastValue&#32;-&#32;firstValue&#32;+&#32;1);
+72 &#32;&#32;&#32;&#32;&#32;&#32;}
+73 
+84 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classstats_1_1_discrete_uniform">DiscreteUniform</link>&amp;&#32;<link linkend="_classstats_1_1_discrete_uniform_1ae58e6c1479db1a5606616e42a2ca8b83">setInterval</link>(<emphasis role="keywordtype">int</emphasis>&#32;firstValue,&#32;<emphasis role="keywordtype">int</emphasis>&#32;lastValue)&#32;{
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;firstValue&#32;=&#32;firstValue;
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;lastValue&#32;=&#32;lastValue;
+87 
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;checkInterval();
+89 
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+91 &#32;&#32;&#32;&#32;&#32;&#32;}
+92 
+100 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classstats_1_1_discrete_uniform_1aba93ff1acfdd8fc3a47a0e8bbfd79196">mean</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{&#32;<emphasis role="keywordflow">return</emphasis>&#32;(firstValue&#32;+&#32;lastValue)&#32;/&#32;2;&#32;}
+101 
+110 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classstats_1_1_discrete_uniform_1a0249d6d7691a12d9d848aa1625f4ef9e">variance</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(lastValue&#32;-&#32;firstValue)&#32;*&#32;(lastValue&#32;-&#32;firstValue&#32;+&#32;2)&#32;/&#32;12;
+112 &#32;&#32;&#32;&#32;&#32;&#32;}
+113 &#32;&#32;&#32;};
+114 }
+115 
+116 <emphasis role="preprocessor">#endif&#32;</emphasis>
+</programlisting></section>

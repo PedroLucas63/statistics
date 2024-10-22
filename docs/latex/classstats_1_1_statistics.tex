@@ -1,0 +1,384 @@
+\doxysection{Referência do Template da Classe stats\+::Statistics\texorpdfstring{$<$}{<} TYPE \texorpdfstring{$>$}{>}}
+\hypertarget{classstats_1_1_statistics}{}\label{classstats_1_1_statistics}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+
+
+Uma classe que fornece métodos de estatística como media, mediana e moda.  
+
+
+
+
+{\ttfamily \#include $<$Statistics.\+hpp$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstats_1_1_statistics_a4478cf7c0646a7246613d86bdbb83e53}{Statistics}} (bool population\+Data=true)
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename It\+Input , typename  = typename std\+::iterator\+\_\+traits$<$\+It\+Input$>$\+::iterator\+\_\+category$>$ }\\\mbox{\hyperlink{classstats_1_1_statistics_a1f50dd9b77aa94d3c158e159101e76eb}{Statistics}} (It\+Input first, It\+Input last, bool population\+Data=true)
+\begin{DoxyCompactList}\small\item\em Construtor com um range de valores. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstats_1_1_statistics_a24d21847d0dc97776fcad300f3eb228a}{Statistics}} (std\+::initializer\+\_\+list$<$ TYPE $>$ list, bool population\+Data=true)
+\begin{DoxyCompactList}\small\item\em Construtor com uma lista de valores. \end{DoxyCompactList}\item 
+std\+::vector$<$ TYPE $>$ \mbox{\hyperlink{classstats_1_1_statistics_aedaf64ac5f10e910f0d139bda96a6e4a}{get\+Values}} () const
+\begin{DoxyCompactList}\small\item\em Obter os valores. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classstats_1_1_statistics_a6ab1698a69d1c46e50894a14879d6518}{is\+Population\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Informa se os valores são de dados de população ou de amostra. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename It\+Input , typename  = typename std\+::iterator\+\_\+traits$<$\+It\+Input$>$\+::iterator\+\_\+category$>$ }\\\mbox{\hyperlink{classstats_1_1_statistics}{Statistics}} \& \mbox{\hyperlink{classstats_1_1_statistics_a5868d8066a92bba4f2a79750b8787acb}{set\+Values}} (It\+Input first, It\+Input last)
+\begin{DoxyCompactList}\small\item\em Define os valores com um range. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstats_1_1_statistics}{Statistics}} \& \mbox{\hyperlink{classstats_1_1_statistics_a7f65ade022fe9da4d6ea4ec5fc73a19d}{set\+Values}} (std\+::initializer\+\_\+list$<$ TYPE $>$ list)
+\begin{DoxyCompactList}\small\item\em Define os valores com uma lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstats_1_1_statistics}{Statistics}} \& \mbox{\hyperlink{classstats_1_1_statistics_adccc7acbcdc9405a0e28988418360b21}{set\+Population\+Data}} (bool population\+Data=true)
+\begin{DoxyCompactList}\small\item\em Define se os valores são de dados de população ou de amostra. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstats_1_1_statistics_a5d3a394412a143a7e63378ebdf6497a1}{size}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o tamanho do conjunto de dados. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classstats_1_1_statistics_a15a337957ee8267406a80b8e92df4c51}{calculate\+Sum}} (std\+::function$<$ double(TYPE)$>$ function=\mbox{[}$\,$\mbox{]}(TYPE value) \{ return value;\}) const
+\begin{DoxyCompactList}\small\item\em Calcula a soma dos elementos do conjunto de dados com base em uma função. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classstats_1_1_statistics_a87940e9555c682df9c1a04b7073fe0e3}{mean}} () const
+\begin{DoxyCompactList}\small\item\em Calcula a média dos elementos do conjunto de dados. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classstats_1_1_statistics_ab4522784ff98a9388b310fdda18f2bfb}{median}} ()
+\begin{DoxyCompactList}\small\item\em Calcula a mediana dos elementos do conjunto de dados. \end{DoxyCompactList}\item 
+TYPE \mbox{\hyperlink{classstats_1_1_statistics_a1bde50be330ea9ed5d1aee3fc19f6293}{mode}} () const
+\begin{DoxyCompactList}\small\item\em Calcula a moda dos elementos do conjunto de dados. \end{DoxyCompactList}\item 
+TYPE \mbox{\hyperlink{classstats_1_1_statistics_a3b51b0ddefd7a41132bb963dca80595c}{amplitude}} () const
+\begin{DoxyCompactList}\small\item\em Calcula a amplitude dos elementos do conjunto de dados. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classstats_1_1_statistics_a3ecbdb096e994586cd0441def847db5c}{variance}} () const
+\begin{DoxyCompactList}\small\item\em Calcula a variância dos elementos do conjunto de dados. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classstats_1_1_statistics_ae84330f13ceb0dcf26ce853596bc4b95}{standard\+Deviation}} () const
+\begin{DoxyCompactList}\small\item\em Calcula o desvio padrão dos elementos do conjunto de dados. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classstats_1_1_statistics_a344e0dec8df89d8b0014d90cd1023cea}{coefficient\+Of\+Variation}} () const
+\begin{DoxyCompactList}\small\item\em Calcula o coeficiente de variação dos elementos do conjunto de. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+\subsubsection*{template$<$typename TYPE$>$\newline
+class stats\+::\+Statistics$<$ TYPE $>$}
+Uma classe que fornece métodos de estatística como media, mediana e moda. 
+
+
+\begin{DoxyTemplParams}{Parâmetros do template}
+{\em TYPE} & Define o tipo de dados. Deve ser um tipo numérico. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Construtores e Destrutores}
+\Hypertarget{classstats_1_1_statistics_a4478cf7c0646a7246613d86bdbb83e53}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!Statistics@{Statistics}}
+\index{Statistics@{Statistics}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{Statistics()}{Statistics()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a4478cf7c0646a7246613d86bdbb83e53} 
+template$<$typename TYPE $>$ \\
+\mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::\+Statistics (\begin{DoxyParamCaption}\item[{bool}]{population\+Data}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor padrão. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em population\+Data} & Define se os valores são de dados de população ou de uma amostra. O padrão é True. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classstats_1_1_statistics_a1f50dd9b77aa94d3c158e159101e76eb}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!Statistics@{Statistics}}
+\index{Statistics@{Statistics}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{Statistics()}{Statistics()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a1f50dd9b77aa94d3c158e159101e76eb} 
+template$<$typename TYPE $>$ \\
+template$<$typename It\+Input , typename  = typename std\+::iterator\+\_\+traits$<$\+It\+Input$>$\+::iterator\+\_\+category$>$ \\
+\mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::\+Statistics (\begin{DoxyParamCaption}\item[{It\+Input}]{first}{, }\item[{It\+Input}]{last}{, }\item[{bool}]{population\+Data}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor com um range de valores. 
+
+
+\begin{DoxyTemplParams}{Parâmetros do template}
+{\em It\+Input} & Tipo do iterador de entrada.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parâmetros}
+{\em first} & Primeiro valor do range. \\
+\hline
+{\em last} & Ultimo valor do range. \\
+\hline
+{\em population\+Data} & Define se os valores são de dados de população ou de uma amostra. O padrão é True. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classstats_1_1_statistics_a24d21847d0dc97776fcad300f3eb228a}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!Statistics@{Statistics}}
+\index{Statistics@{Statistics}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{Statistics()}{Statistics()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a24d21847d0dc97776fcad300f3eb228a} 
+template$<$typename TYPE $>$ \\
+\mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::\+Statistics (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ TYPE $>$}]{list}{, }\item[{bool}]{population\+Data}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor com uma lista de valores. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & Lista de valores. \\
+\hline
+{\em population\+Data} & Define se os valores são de dados de população ou de uma amostra. O padrão é True. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{classstats_1_1_statistics_a3b51b0ddefd7a41132bb963dca80595c}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!amplitude@{amplitude}}
+\index{amplitude@{amplitude}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{amplitude()}{amplitude()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a3b51b0ddefd7a41132bb963dca80595c} 
+template$<$typename TYPE $>$ \\
+TYPE \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::amplitude (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula a amplitude dos elementos do conjunto de dados. 
+
+A amplitude é a diferença entre o maior e o menor elemento do conjunto de dados.
+
+\begin{DoxyReturn}{Retorna}
+A amplitude dos elementos do conjunto de dados.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceções}
+{\em std\+::runtime\+\_\+error} & se o conjunto de dados estiver vazio. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classstats_1_1_statistics_a15a337957ee8267406a80b8e92df4c51}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!calculateSum@{calculateSum}}
+\index{calculateSum@{calculateSum}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{calculateSum()}{calculateSum()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a15a337957ee8267406a80b8e92df4c51} 
+template$<$typename TYPE $>$ \\
+double \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::calculate\+Sum (\begin{DoxyParamCaption}\item[{std\+::function$<$ double(TYPE)$>$}]{function}{ = {\ttfamily \mbox{[}\mbox{]}(TYPE~value)~\{~return~value;~\}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula a soma dos elementos do conjunto de dados com base em uma função. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em function} & Uma função que recebe um elemento do conjunto de dados e retorna um double que deve ser somado ao total. O padrão é o próprio elemento do conjunto de dados.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A soma dos elementos do conjunto de dados com base na função. 
+\end{DoxyReturn}
+\Hypertarget{classstats_1_1_statistics_a344e0dec8df89d8b0014d90cd1023cea}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!coefficientOfVariation@{coefficientOfVariation}}
+\index{coefficientOfVariation@{coefficientOfVariation}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{coefficientOfVariation()}{coefficientOfVariation()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a344e0dec8df89d8b0014d90cd1023cea} 
+template$<$typename TYPE $>$ \\
+double \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::coefficient\+Of\+Variation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula o coeficiente de variação dos elementos do conjunto de. 
+
+O coeficiente de variação é a proporção entre a variância e a média.
+
+\begin{DoxyReturn}{Retorna}
+O coeficiente de variação dos elementos do conjunto de dados. 
+\end{DoxyReturn}
+\Hypertarget{classstats_1_1_statistics_aedaf64ac5f10e910f0d139bda96a6e4a}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!getValues@{getValues}}
+\index{getValues@{getValues}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{getValues()}{getValues()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_aedaf64ac5f10e910f0d139bda96a6e4a} 
+template$<$typename TYPE $>$ \\
+std\+::vector$<$ TYPE $>$ \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::get\+Values (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obter os valores. 
+
+\begin{DoxyReturn}{Retorna}
+Os valores. 
+\end{DoxyReturn}
+\Hypertarget{classstats_1_1_statistics_a6ab1698a69d1c46e50894a14879d6518}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!isPopulationData@{isPopulationData}}
+\index{isPopulationData@{isPopulationData}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{isPopulationData()}{isPopulationData()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a6ab1698a69d1c46e50894a14879d6518} 
+template$<$typename TYPE $>$ \\
+bool \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::is\+Population\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Informa se os valores são de dados de população ou de amostra. 
+
+\begin{DoxyReturn}{Retorna}
+True se os valores são de dados de população e False caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{classstats_1_1_statistics_a87940e9555c682df9c1a04b7073fe0e3}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!mean@{mean}}
+\index{mean@{mean}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{mean()}{mean()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a87940e9555c682df9c1a04b7073fe0e3} 
+template$<$typename TYPE $>$ \\
+double \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::mean (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula a média dos elementos do conjunto de dados. 
+
+A média é a soma dos elementos dividida pelo número de elementos.
+
+\begin{DoxyReturn}{Retorna}
+A média dos elementos do conjunto de dados. Se o conjunto estiver vazio retorna 0. 
+\end{DoxyReturn}
+\Hypertarget{classstats_1_1_statistics_ab4522784ff98a9388b310fdda18f2bfb}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!median@{median}}
+\index{median@{median}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{median()}{median()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_ab4522784ff98a9388b310fdda18f2bfb} 
+template$<$typename TYPE $>$ \\
+double \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::median (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula a mediana dos elementos do conjunto de dados. 
+
+A mediana é o elemento central do conjunto de dados.
+
+\begin{DoxyReturn}{Retorna}
+A mediana dos elementos do conjunto de dados.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceções}
+{\em std\+::runtime\+\_\+error} & se o conjunto de dados estiver vazio. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classstats_1_1_statistics_a1bde50be330ea9ed5d1aee3fc19f6293}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!mode@{mode}}
+\index{mode@{mode}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{mode()}{mode()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a1bde50be330ea9ed5d1aee3fc19f6293} 
+template$<$typename TYPE $>$ \\
+TYPE \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula a moda dos elementos do conjunto de dados. 
+
+A moda é o elemento que mais se repete no conjunto de dados.
+
+\begin{DoxyReturn}{Retorna}
+A moda dos elementos do conjunto de dados.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceções}
+{\em std\+::runtime\+\_\+error} & se o conjunto de dados estiver vazio. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classstats_1_1_statistics_adccc7acbcdc9405a0e28988418360b21}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!setPopulationData@{setPopulationData}}
+\index{setPopulationData@{setPopulationData}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{setPopulationData()}{setPopulationData()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_adccc7acbcdc9405a0e28988418360b21} 
+template$<$typename TYPE $>$ \\
+\mbox{\hyperlink{classstats_1_1_statistics}{Statistics}} \& \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::set\+Population\+Data (\begin{DoxyParamCaption}\item[{bool}]{population\+Data}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define se os valores são de dados de população ou de amostra. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em population\+Data} & Define se os valores são de dados de população ou de uma amostra. O padrão é True.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A referência do objeto de \doxylink{classstats_1_1_statistics}{Statistics} atual. 
+\end{DoxyReturn}
+\Hypertarget{classstats_1_1_statistics_a5868d8066a92bba4f2a79750b8787acb}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!setValues@{setValues}}
+\index{setValues@{setValues}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{setValues()}{setValues()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a5868d8066a92bba4f2a79750b8787acb} 
+template$<$typename TYPE $>$ \\
+template$<$typename It\+Input , typename  = typename std\+::iterator\+\_\+traits$<$\+It\+Input$>$\+::iterator\+\_\+category$>$ \\
+\mbox{\hyperlink{classstats_1_1_statistics}{Statistics}} \& \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::set\+Values (\begin{DoxyParamCaption}\item[{It\+Input}]{first}{, }\item[{It\+Input}]{last}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define os valores com um range. 
+
+
+\begin{DoxyTemplParams}{Parâmetros do template}
+{\em It\+Input} & Tipo do iterador de entrada.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parâmetros}
+{\em first} & Primeiro valor do range. \\
+\hline
+{\em last} & Ultimo valor do range.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A referência do objeto de \doxylink{classstats_1_1_statistics}{Statistics} atual. 
+\end{DoxyReturn}
+\Hypertarget{classstats_1_1_statistics_a7f65ade022fe9da4d6ea4ec5fc73a19d}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!setValues@{setValues}}
+\index{setValues@{setValues}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{setValues()}{setValues()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a7f65ade022fe9da4d6ea4ec5fc73a19d} 
+template$<$typename TYPE $>$ \\
+\mbox{\hyperlink{classstats_1_1_statistics}{Statistics}} \& \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::set\+Values (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ TYPE $>$}]{list}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define os valores com uma lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & Lista de valores.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A referência do objeto de \doxylink{classstats_1_1_statistics}{Statistics} atual. 
+\end{DoxyReturn}
+\Hypertarget{classstats_1_1_statistics_a5d3a394412a143a7e63378ebdf6497a1}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!size@{size}}
+\index{size@{size}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a5d3a394412a143a7e63378ebdf6497a1} 
+template$<$typename TYPE $>$ \\
+int \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o tamanho do conjunto de dados. 
+
+\begin{DoxyReturn}{Retorna}
+O tamanho do conjunto de dados. 
+\end{DoxyReturn}
+\Hypertarget{classstats_1_1_statistics_ae84330f13ceb0dcf26ce853596bc4b95}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!standardDeviation@{standardDeviation}}
+\index{standardDeviation@{standardDeviation}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{standardDeviation()}{standardDeviation()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_ae84330f13ceb0dcf26ce853596bc4b95} 
+template$<$typename TYPE $>$ \\
+double \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::standard\+Deviation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula o desvio padrão dos elementos do conjunto de dados. 
+
+O desvio padrão é a raiz quadrada da variância.
+
+\begin{DoxyReturn}{Retorna}
+O desvio padrão dos elementos do conjunto de dados. Se o conjunto estiver vazio retorna 0. 
+\end{DoxyReturn}
+\Hypertarget{classstats_1_1_statistics_a3ecbdb096e994586cd0441def847db5c}\index{stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}!variance@{variance}}
+\index{variance@{variance}!stats::Statistics$<$ TYPE $>$@{stats::Statistics$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{variance()}{variance()}}
+{\footnotesize\ttfamily \label{classstats_1_1_statistics_a3ecbdb096e994586cd0441def847db5c} 
+template$<$typename TYPE $>$ \\
+double \mbox{\hyperlink{classstats_1_1_statistics}{stats\+::\+Statistics}}$<$ TYPE $>$\+::variance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula a variância dos elementos do conjunto de dados. 
+
+A variância é a soma dos quadrados das diferenças entre cada elemento e a média do conjunto de dados.
+
+\begin{DoxyReturn}{Retorna}
+A variância dos elementos do conjunto de dados. Se o conjunto estiver vazio retorna 0. 
+\end{DoxyReturn}
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{_statistics_8hpp}{Statistics.\+hpp}}\end{DoxyCompactItemize}

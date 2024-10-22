@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__geometric_8hpp_source" xml:lang="pt-BR">
+<title>Geometric.hpp</title>
+<indexterm><primary>src/include/models/Geometric.hpp</primary></indexterm>
+Ir para a documentação desse arquivo.<programlisting linenumbering="unnumbered">1 
+12 <emphasis role="preprocessor">#ifndef&#32;GEOMETRIC_HPP_</emphasis>
+13 <emphasis role="preprocessor">#define&#32;GEOMETRIC_HPP_</emphasis>
+14 
+15 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__discrete_distribution_8hpp">DiscreteDistribution.hpp</link>&quot;</emphasis>
+16 <emphasis role="preprocessor">#include&#32;&lt;cmath&gt;</emphasis>
+17 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+18 
+19 <emphasis role="keyword">namespace&#32;</emphasis>stats&#32;{
+30 &#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classstats_1_1_geometric">Geometric</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classstats_1_1_discrete_distribution">DiscreteDistribution</link>&#32;{
+31 &#32;&#32;<emphasis role="keyword">private</emphasis>:
+32 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;probabilityOfSuccess;
+33 
+40 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;checkProbabilityOfSuccess()&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(probabilityOfSuccess&#32;&lt;&#32;0&#32;||&#32;probabilityOfSuccess&#32;&gt;&#32;1)&#32;{
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Probability&#32;of&#32;success&#32;is&#32;not&#32;between&#32;0&#32;and&#32;1&quot;</emphasis>);
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+45 &#32;&#32;&#32;&#32;&#32;&#32;}
+46 
+47 &#32;&#32;<emphasis role="keyword">public</emphasis>:
+57 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classstats_1_1_geometric_1a4cdaa04502a7aacb619277770bbd9a1e">Geometric</link>(<emphasis role="keywordtype">double</emphasis>&#32;probabilityOfSuccess)
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;probabilityOfSuccess(probabilityOfSuccess)&#32;{
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;checkProbabilityOfSuccess();
+60 &#32;&#32;&#32;&#32;&#32;&#32;}
+61 
+76 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classstats_1_1_geometric_1a6979763eb2aab79c2d787ff185d383ae">getProbability</link>(<emphasis role="keywordtype">int</emphasis>&#32;replicasMade)<emphasis role="keyword">&#32;const&#32;</emphasis>{
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(replicasMade&#32;&lt;&#32;0)&#32;{
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+80 
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::pow(1&#32;-&#32;probabilityOfSuccess,&#32;replicasMade&#32;-&#32;1)
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;probabilityOfSuccess;
+83 &#32;&#32;&#32;&#32;&#32;&#32;}
+84 
+95 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classstats_1_1_geometric">Geometric</link>&amp;&#32;<link linkend="_classstats_1_1_geometric_1a1543eece84d3537c5c8162df08701a0f">setProbabilityOfSuccess</link>(<emphasis role="keywordtype">double</emphasis>&#32;probabilityOfSuccess)&#32;{
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;probabilityOfSuccess&#32;=&#32;probabilityOfSuccess;
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;checkProbabilityOfSuccess();
+98 
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+100 &#32;&#32;&#32;&#32;&#32;&#32;}
+101 
+110 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classstats_1_1_geometric_1a384479b12dea81fd41ae7f7344ec48ad">mean</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{&#32;<emphasis role="keywordflow">return</emphasis>&#32;1&#32;/&#32;probabilityOfSuccess;&#32;}
+111 
+121 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classstats_1_1_geometric_1a4650787fe93b694cb5f8ccdd7b92c0ea">variance</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(1&#32;-&#32;probabilityOfSuccess)&#32;/&#32;std::pow(probabilityOfSuccess,&#32;2);
+123 &#32;&#32;&#32;&#32;&#32;&#32;}
+124 &#32;&#32;&#32;};
+125 }
+126 
+127 <emphasis role="preprocessor">#endif&#32;</emphasis>
+</programlisting></section>

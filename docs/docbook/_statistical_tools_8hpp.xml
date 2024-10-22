@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__statistical_tools_8hpp" xml:lang="pt-BR">
+<title>Referência do Arquivo src/include/StatisticalTools.hpp</title>
+<indexterm><primary>src/include/StatisticalTools.hpp</primary></indexterm>
+<para>
+
+<para>Arquivo de cabeçalho para funções auxiliares para estatística. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdexcept&gt;<?linebreak?></programlisting>Gráfico de dependência de inclusões para StatisticalTools.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_statistical_tools_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com esse arquivo:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_statistical_tools_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Funções    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="__statistical_tools_8hpp_1afc5887d52940cf337274b76cbb3d347f">stats::factorial</link> (int x)</para>
+
+<para>Calcula o fatorial de um número. </para>
+</listitem>
+            <listitem><para>int <link linkend="__statistical_tools_8hpp_1a40435961c50cdd42bc3eccc076daa342">stats::combination</link> (int n, int x)</para>
+
+<para>Calcula o número de combinações de x elementos de um conjunto de tamanho n. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descrição detalhada</title>
+
+<para>Arquivo de cabeçalho para funções auxiliares para estatística. </para>
+
+<para><formalpara><title>Autor</title>
+
+<para>Pedro Lucas (<link xlink:href="mailto:pedrolucas.jsrn@gmail.com">pedrolucas.jsrn@gmail.com</link>) </para>
+</formalpara>
+<formalpara><title>Versão</title>
+
+<para>1.0 </para>
+</formalpara>
+<formalpara><title>Data</title>
+
+<para>2024-10-22</para>
+</formalpara>
+<formalpara><title>Copyright</title>
+
+<para>Copyright (c) 2024 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Funções</title>
+<anchor xml:id="__statistical_tools_8hpp_1a40435961c50cdd42bc3eccc076daa342"/><section>
+    <title>combination()</title>
+<indexterm><primary>combination</primary><secondary>StatisticalTools.hpp</secondary></indexterm>
+<indexterm><primary>StatisticalTools.hpp</primary><secondary>combination</secondary></indexterm>
+<para><computeroutput>int stats::combination (int n, int x)</computeroutput></para><para>
+
+<para>Calcula o número de combinações de x elementos de um conjunto de tamanho n. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parâmetros</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>n</entry><entry>
+<para>O tamanho do conjunto. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>x</entry><entry>
+<para>O tamanho da combinação.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Retorna</title>
+
+<para>O número de combinações.</para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceções</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>se x, n ou n - x for negativo. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="__statistical_tools_8hpp_1afc5887d52940cf337274b76cbb3d347f"/><section>
+    <title>factorial()</title>
+<indexterm><primary>factorial</primary><secondary>StatisticalTools.hpp</secondary></indexterm>
+<indexterm><primary>StatisticalTools.hpp</primary><secondary>factorial</secondary></indexterm>
+<para><computeroutput>int stats::factorial (int x)</computeroutput></para><para>
+
+<para>Calcula o fatorial de um número. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parâmetros</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>x</entry><entry>
+<para>O número a ser calculado o fatorial.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Retorna</title>
+
+<para>O fatorial de x.</para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceções</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>se x for negativo. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+</section>

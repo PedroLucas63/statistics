@@ -1,0 +1,57 @@
+\doxysection{Geometric.\+hpp}
+\hypertarget{_geometric_8hpp_source}{}\label{_geometric_8hpp_source}\index{src/include/models/Geometric.hpp@{src/include/models/Geometric.hpp}}
+\mbox{\hyperlink{_geometric_8hpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ GEOMETRIC\_HPP\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ GEOMETRIC\_HPP\_}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_discrete_distribution_8hpp}{DiscreteDistribution.hpp}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }stats\ \{}
+\DoxyCodeLine{00030\ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classstats_1_1_geometric}{Geometric}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classstats_1_1_discrete_distribution}{DiscreteDistribution}}\ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ probabilityOfSuccess;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ checkProbabilityOfSuccess()\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (probabilityOfSuccess\ <\ 0\ ||\ probabilityOfSuccess\ >\ 1)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Probability\ of\ success\ is\ not\ between\ 0\ and\ 1"{}});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_geometric_a4cdaa04502a7aacb619277770bbd9a1e}{Geometric}}(\textcolor{keywordtype}{double}\ probabilityOfSuccess)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ :\ probabilityOfSuccess(probabilityOfSuccess)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ checkProbabilityOfSuccess();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_geometric_a6979763eb2aab79c2d787ff185d383ae}{getProbability}}(\textcolor{keywordtype}{int}\ replicasMade)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (replicasMade\ <\ 0)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::pow(1\ -\/\ probabilityOfSuccess,\ replicasMade\ -\/\ 1)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ *\ probabilityOfSuccess;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_geometric}{Geometric}}\&\ \mbox{\hyperlink{classstats_1_1_geometric_a1543eece84d3537c5c8162df08701a0f}{setProbabilityOfSuccess}}(\textcolor{keywordtype}{double}\ probabilityOfSuccess)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ this-\/>probabilityOfSuccess\ =\ probabilityOfSuccess;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ checkProbabilityOfSuccess();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_geometric_a384479b12dea81fd41ae7f7344ec48ad}{mean}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 1\ /\ probabilityOfSuccess;\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_geometric_a4650787fe93b694cb5f8ccdd7b92c0ea}{variance}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (1\ -\/\ probabilityOfSuccess)\ /\ std::pow(probabilityOfSuccess,\ 2);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \};}
+\DoxyCodeLine{00125\ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

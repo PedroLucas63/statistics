@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__statistical_tools_8hpp_source" xml:lang="pt-BR">
+<title>StatisticalTools.hpp</title>
+<indexterm><primary>src/include/StatisticalTools.hpp</primary></indexterm>
+Ir para a documentação desse arquivo.<programlisting linenumbering="unnumbered">1 
+11 <emphasis role="preprocessor">#ifndef&#32;STATISTICAL_TOOLS_HPP_</emphasis>
+12 <emphasis role="preprocessor">#define&#32;STATISTICAL_TOOLS_HPP_</emphasis>
+13 
+14 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+15 
+16 <emphasis role="keyword">namespace&#32;</emphasis>stats&#32;{
+26 &#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__statistical_tools_8hpp_1afc5887d52940cf337274b76cbb3d347f">factorial</link>(<emphasis role="keywordtype">int</emphasis>&#32;x)&#32;{
+27 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(x&#32;&lt;&#32;0)&#32;{
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Factorial&#32;is&#32;not&#32;defined&#32;for&#32;negative&#32;numbers&quot;</emphasis>);
+30 &#32;&#32;&#32;&#32;&#32;&#32;}
+31 
+32 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x&#32;&lt;=&#32;1&#32;?&#32;1&#32;:&#32;x&#32;*&#32;<link linkend="__statistical_tools_8hpp_1afc5887d52940cf337274b76cbb3d347f">factorial</link>(x&#32;-&#32;1);
+33 &#32;&#32;&#32;}
+34 
+46 &#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__statistical_tools_8hpp_1a40435961c50cdd42bc3eccc076daa342">combination</link>(<emphasis role="keywordtype">int</emphasis>&#32;n,&#32;<emphasis role="keywordtype">int</emphasis>&#32;x)&#32;{
+47 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__statistical_tools_8hpp_1afc5887d52940cf337274b76cbb3d347f">factorial</link>(n)&#32;/&#32;(<link linkend="__statistical_tools_8hpp_1afc5887d52940cf337274b76cbb3d347f">factorial</link>(n&#32;-&#32;x)&#32;*&#32;<link linkend="__statistical_tools_8hpp_1afc5887d52940cf337274b76cbb3d347f">factorial</link>(x));
+48 &#32;&#32;&#32;}
+49 }
+50 
+51 <emphasis role="preprocessor">#endif&#32;</emphasis>
+</programlisting></section>

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Estatística: Código-Fonte de src/include/models/DiscreteDistribution.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="abacus_1f9ee (2).png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Estatística<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Provê bibliotecas para o cálculo de estatística básica e de probabilidade de modelos discretos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_discrete_distribution_8hpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">DiscreteDistribution.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_discrete_distribution_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef DISCRETE_DISTRIBUTION_HPP_</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define DISCRETE_DISTRIBUTION_HPP_</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span>stats {</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classstats_1_1_discrete_distribution.html">   24</a></span>   <span class="keyword">class </span><a class="code hl_class" href="classstats_1_1_discrete_distribution.html">DiscreteDistribution</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classstats_1_1_discrete_distribution.html#a4759c515929cb7e26f4c454740fe98a5">   32</a></span>      <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classstats_1_1_discrete_distribution.html#a4759c515929cb7e26f4c454740fe98a5">getProbability</a>(<span class="keywordtype">int</span> value) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classstats_1_1_discrete_distribution.html#a3852539f59a449400c0543543e4d9473">   39</a></span>      <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classstats_1_1_discrete_distribution.html#a3852539f59a449400c0543543e4d9473">mean</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classstats_1_1_discrete_distribution.html#ad6c651a325f9b856a4de52bf7d87ce0d">   46</a></span>      <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classstats_1_1_discrete_distribution.html#ad6c651a325f9b856a4de52bf7d87ce0d">variance</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>   };</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif </span></div>
+<div class="ttc" id="aclassstats_1_1_discrete_distribution_html"><div class="ttname"><a href="classstats_1_1_discrete_distribution.html">stats::DiscreteDistribution</a></div><div class="ttdoc">Uma classe para representar uma distribuição discreta.</div><div class="ttdef"><b>Definição</b> DiscreteDistribution.hpp:24</div></div>
+<div class="ttc" id="aclassstats_1_1_discrete_distribution_html_a3852539f59a449400c0543543e4d9473"><div class="ttname"><a href="classstats_1_1_discrete_distribution.html#a3852539f59a449400c0543543e4d9473">stats::DiscreteDistribution::mean</a></div><div class="ttdeci">virtual double mean() const =0</div><div class="ttdoc">Calcula a média da distribuição.</div></div>
+<div class="ttc" id="aclassstats_1_1_discrete_distribution_html_a4759c515929cb7e26f4c454740fe98a5"><div class="ttname"><a href="classstats_1_1_discrete_distribution.html#a4759c515929cb7e26f4c454740fe98a5">stats::DiscreteDistribution::getProbability</a></div><div class="ttdeci">virtual double getProbability(int value) const =0</div><div class="ttdoc">Retorna a probabilidade de um dado valor.</div></div>
+<div class="ttc" id="aclassstats_1_1_discrete_distribution_html_ad6c651a325f9b856a4de52bf7d87ce0d"><div class="ttname"><a href="classstats_1_1_discrete_distribution.html#ad6c651a325f9b856a4de52bf7d87ce0d">stats::DiscreteDistribution::variance</a></div><div class="ttdeci">virtual double variance() const =0</div><div class="ttdoc">Calcula a variância da distribuição.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_ca83ffc64dc9381601738c88f4e696c9.html">models</a></li><li class="navelem"><a class="el" href="_discrete_distribution_8hpp.html">DiscreteDistribution.hpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

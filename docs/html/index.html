@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Estatística: Biblioteca de Estatísticas 🧮</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="abacus_1f9ee (2).png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Estatística<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Provê bibliotecas para o cálculo de estatística básica e de probabilidade de modelos discretos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('index.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Biblioteca de Estatísticas 🧮 </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<p>Esta biblioteca fornece ferramentas para cálculos estatísticos descritivos e distribuições de probabilidade. Desenvolvida em C++, ela oferece métodos para operações básicas como soma, média e variância, além de funções auxiliares como fatorial e combinações.</p>
+<h1><a class="anchor" id="tabela-de-conteúdos"></a>
+Tabela de Conteúdos</h1>
+<ol type="1">
+<li>Introdução</li>
+<li>Funcionalidades</li>
+<li>Como Usar<ul>
+<li><a class="el" href="#baixar-via-github">Baixar via GitHub</a></li>
+<li><a class="el" href="#incluir-diretórios-no-cmake">Incluir Diretórios no CMake</a></li>
+<li><a class="el" href="#utilizando-a-biblioteca">Utilizando a Biblioteca</a></li>
+</ul>
+</li>
+<li>Contribuição</li>
+<li>Licença</li>
+<li>Créditos</li>
+</ol>
+<h1><a class="anchor" id="introdução-"></a>
+Introdução 🚀</h1>
+<p>A biblioteca foi projetada para fornecer operações estatísticas e trabalhar com distribuições como Binomial, Uniforme Discreta e Geométrica. Ela também inclui ferramentas auxiliares para cálculos como fatorial e combinação, facilitando o uso em projetos que requerem análise estatística. Cada classe possui métodos para garantir a correta configuração dos dados, com verificações de erros e lançamento de exceções.</p>
+<p>A biblioteca é organizada em módulos:</p>
+<ul>
+<li><b>Statistics</b>: Para cálculos descritivos.</li>
+<li><b>Binomial, UniformDiscrete e Geometric</b>: Para distribuições de probabilidade discretas.</li>
+<li><b>StatisticalTools</b>: Para operações auxiliares, como cálculo de fatorial e combinações.</li>
+</ul>
+<h1><a class="anchor" id="funcionalidades-"></a>
+Funcionalidades 🌟</h1>
+<ul>
+<li>Cálculos de soma, média, mediana, moda, variância, desvio padrão e coeficiente de variação.</li>
+<li>Métodos para distribuições binomiais, uniformes discretas e geométricas, incluindo probabilidade, média e variância.</li>
+<li>Ferramentas auxiliares para cálculos de fatorial e combinação.</li>
+<li>Verificação automática de erros e lançamento de exceções.</li>
+</ul>
+<h1><a class="anchor" id="como-usar-️"></a>
+Como Usar 🛠️</h1>
+<h2><a class="anchor" id="baixar-via-github"></a>
+Baixar via GitHub</h2>
+<p>Para utilizar a biblioteca, clone o repositório do GitHub:</p>
+<div class="fragment"><div class="line">git clone https://github.com/PedroLucas63/statistics.git</div>
+</div><!-- fragment --><h2><a class="anchor" id="incluir-diretórios-no-cmake"></a>
+Incluir Diretórios no CMake</h2>
+<p>Certifique-se de que as pastas <code>include</code> e <code>include/models</code> estejam organizadas conforme a estrutura abaixo:</p>
+<div class="fragment"><div class="line">/seu-projeto</div>
+<div class="line">├── CMakeLists.txt</div>
+<div class="line">├── src/</div>
+<div class="line">├── include/</div>
+<div class="line">│   ├── Statistics.hpp</div>
+<div class="line">│   ├── StatisticalTools.hpp</div>
+<div class="line">│   └── models/</div>
+<div class="line">│       ├── DiscreteDistribution.hpp</div>
+<div class="line">│       ├── Binomial.hpp</div>
+<div class="line">│       ├── UniformDiscrete.hpp</div>
+<div class="line">│       └── Geometric.hpp</div>
+</div><!-- fragment --><p>Adicione o seguinte ao seu arquivo <code>CMakeLists.txt</code>:</p>
+<div class="fragment"><div class="line">include_directories(src/include src/include/models)</div>
+</div><!-- fragment --><h2><a class="anchor" id="utilizando-a-biblioteca"></a>
+Utilizando a Biblioteca</h2>
+<p>No seu código, inclua os arquivos da biblioteca e utilize o namespace <code>stats</code> para acessar as funções:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_binomial_8hpp.html">Binomial.hpp</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_statistics_8hpp.html">Statistics.hpp</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
+<div class="line">   <a class="code hl_class" href="classstats_1_1_statistics.html">stats::Statistics</a> stats({ 1, 2, 3, 4, 5 });</div>
+<div class="line"> </div>
+<div class="line">   std::cout &lt;&lt; <span class="stringliteral">&quot;Média: &quot;</span> &lt;&lt; stats.<a class="code hl_function" href="classstats_1_1_statistics.html#a87940e9555c682df9c1a04b7073fe0e3">mean</a>() &lt;&lt; std::endl;</div>
+<div class="line">   std::cout &lt;&lt; <span class="stringliteral">&quot;Desvio Padrão: &quot;</span> &lt;&lt; stats.standardDeviation() &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">   <a class="code hl_class" href="classstats_1_1_binomial.html">stats::Binomial</a> binom(10, 0.5);</div>
+<div class="line">   std::cout &lt;&lt; <span class="stringliteral">&quot;Probabilidade: &quot;</span> &lt;&lt; binom.getProbability(5) &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">   <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
+<div class="line">}</div>
+<div class="ttc" id="a_binomial_8hpp_html"><div class="ttname"><a href="_binomial_8hpp.html">Binomial.hpp</a></div><div class="ttdoc">Arquivo de cabeçalho para a classe Binomial.</div></div>
+<div class="ttc" id="a_statistics_8hpp_html"><div class="ttname"><a href="_statistics_8hpp.html">Statistics.hpp</a></div><div class="ttdoc">Arquivo de cabeçalho para a classe Statistics.</div></div>
+<div class="ttc" id="aclassstats_1_1_binomial_html"><div class="ttname"><a href="classstats_1_1_binomial.html">stats::Binomial</a></div><div class="ttdoc">Uma classe para representar uma distribuição binomial.</div><div class="ttdef"><b>Definição</b> Binomial.hpp:30</div></div>
+<div class="ttc" id="aclassstats_1_1_statistics_html"><div class="ttname"><a href="classstats_1_1_statistics.html">stats::Statistics</a></div><div class="ttdoc">Uma classe que fornece métodos de estatística como media, mediana e moda.</div><div class="ttdef"><b>Definição</b> Statistics.hpp:32</div></div>
+<div class="ttc" id="aclassstats_1_1_statistics_html_a87940e9555c682df9c1a04b7073fe0e3"><div class="ttname"><a href="classstats_1_1_statistics.html#a87940e9555c682df9c1a04b7073fe0e3">stats::Statistics::mean</a></div><div class="ttdeci">double mean() const</div><div class="ttdoc">Calcula a média dos elementos do conjunto de dados.</div><div class="ttdef"><b>Definição</b> Statistics.hpp:185</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="contribuição-"></a>
+Contribuição 🤝</h1>
+<p>Contribuições são bem-vindas! Se você deseja melhorar esta biblioteca, sinta-se à vontade para abrir um pull request ou reportar issues no repositório.</p>
+<h1><a class="anchor" id="licença-"></a>
+Licença 📄</h1>
+<p>Esta biblioteca é open-source e está sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.</p>
+<h1><a class="anchor" id="contato-"></a>
+Contato 📧</h1>
+<p>Feito por ❤️ Pedro Lucas <br  />
+ Me contato por <a href="#" onclick="location.href='mai'+'lto:'+'ped'+'ro'+'luc'+'as'+'.js'+'rn'+'@gm'+'ai'+'l.c'+'om'; return false;">pedro<span class="obfuscator">.nosp@m.</span>luca<span class="obfuscator">.nosp@m.</span>s.jsr<span class="obfuscator">.nosp@m.</span>n@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a>. </p>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+\doxysection{Binomial.\+hpp}
+\hypertarget{_binomial_8hpp_source}{}\label{_binomial_8hpp_source}\index{src/include/models/Binomial.hpp@{src/include/models/Binomial.hpp}}
+\mbox{\hyperlink{_binomial_8hpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ BINOMIAL\_HPP\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ BINOMIAL\_HPP\_}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_discrete_distribution_8hpp}{DiscreteDistribution.hpp}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_statistical_tools_8hpp}{StatisticalTools.hpp}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }stats\ \{}
+\DoxyCodeLine{00030\ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classstats_1_1_binomial}{Binomial}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classstats_1_1_discrete_distribution}{DiscreteDistribution}}\ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numberOfTrials;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ probabilityOfSuccess;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ checkNumberOfTrials()\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numberOfTrials\ <\ 0)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Number\ of\ trials\ is\ negative"{}});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ checkProbabilityOfSuccess()\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (probabilityOfSuccess\ <\ 0\ ||\ probabilityOfSuccess\ >\ 1)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Probability\ of\ success\ is\ not\ between\ 0\ and\ 1"{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ checkDistribution()\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ checkNumberOfTrials();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ checkProbabilityOfSuccess();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_binomial_a336a8548b17f517528ec10ceb83a3a2d}{Binomial}}(\textcolor{keywordtype}{int}\ numberOfTrials,\ \textcolor{keywordtype}{double}\ probabilityOfSuccess)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ :\ numberOfTrials(numberOfTrials)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ ,\ probabilityOfSuccess(probabilityOfSuccess)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ checkDistribution();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_binomial_ac87a253b2742143b05be2abc31f2f6be}{getProbability}}(\textcolor{keywordtype}{int}\ numberOfSuccesses)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numberOfSuccesses\ <\ 0\ ||\ numberOfSuccesses\ >\ numberOfTrials)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ combinations\ =\ \mbox{\hyperlink{_statistical_tools_8hpp_a40435961c50cdd42bc3eccc076daa342}{combination}}(numberOfTrials,\ numberOfSuccesses);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ probabilityOfSuccesses}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ =\ std::pow(probabilityOfSuccess,\ numberOfSuccesses);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ probabilityOfFails\ =\ std::pow(}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ 1\ -\/\ probabilityOfSuccess,\ numberOfTrials\ -\/\ numberOfSuccesses);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ combinations\ *\ probabilityOfSuccesses\ *\ probabilityOfFails;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_binomial}{Binomial}}\&\ \mbox{\hyperlink{classstats_1_1_binomial_a8cd292074568b0121da8d36de7d86978}{setNumberOfTrials}}(\textcolor{keywordtype}{int}\ numberOfTrials)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ this-\/>numberOfTrials\ =\ numberOfTrials;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ checkDistribution();}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \mbox{\hyperlink{classstats_1_1_binomial}{Binomial}}\&\ \mbox{\hyperlink{classstats_1_1_binomial_ad224c396246f6e1a75fe7b5e5b6a1e0e}{setProbabilityOfSuccess}}(\textcolor{keywordtype}{double}\ probabilityOfSuccess)\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ this-\/>probabilityOfSuccess\ =\ probabilityOfSuccess;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ checkDistribution();}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_binomial_a894d368251fd4127674a55299d23e608}{mean}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ numberOfTrials\ *\ probabilityOfSuccess;\ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classstats_1_1_binomial_a96edc39d8a84d02444f338e1ff5b423d}{variance}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ numberOfTrials\ *\ probabilityOfSuccess}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ *\ (1\ -\/\ probabilityOfSuccess);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \};}
+\DoxyCodeLine{00168\ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classstats_1_1_binomial" xml:lang="pt-BR">
+<title>Referência da Classe stats::Binomial</title>
+<indexterm><primary>stats::Binomial</primary></indexterm>
+<para>
+
+<para>Uma classe para representar uma distribuição binomial. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Binomial.hpp&gt;</computeroutput>
+</para>
+Diagrama de hierarquia da classe stats::Binomial:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classstats_1_1_binomial__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Diagrama de colaboração para stats::Binomial:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classstats_1_1_binomial__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Membros Públicos    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classstats_1_1_binomial_1a336a8548b17f517528ec10ceb83a3a2d">Binomial</link> (int numberOfTrials, double probabilityOfSuccess)</para>
+
+<para>Construtor para o objeto <link linkend="_classstats_1_1_binomial">Binomial</link>. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classstats_1_1_binomial_1ac87a253b2742143b05be2abc31f2f6be">getProbability</link> (int numberOfSuccesses) const</para>
+
+<para>Calcula a probabilidade de um dado número de sucessos. </para>
+</listitem>
+            <listitem><para><link linkend="_classstats_1_1_binomial">Binomial</link> &amp; <link linkend="_classstats_1_1_binomial_1a8cd292074568b0121da8d36de7d86978">setNumberOfTrials</link> (int numberOfTrials)</para>
+
+<para>Define o número de tentativas. </para>
+</listitem>
+            <listitem><para><link linkend="_classstats_1_1_binomial">Binomial</link> &amp; <link linkend="_classstats_1_1_binomial_1ad224c396246f6e1a75fe7b5e5b6a1e0e">setProbabilityOfSuccess</link> (double probabilityOfSuccess)</para>
+
+<para>Define a probabilidade de sucesso. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classstats_1_1_binomial_1a894d368251fd4127674a55299d23e608">mean</link> () const</para>
+
+<para>Calcula a média da distribuição. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classstats_1_1_binomial_1a96edc39d8a84d02444f338e1ff5b423d">variance</link> () const</para>
+
+<para>Calcula a variância da distribuição. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Membros Públicos herdados de <link linkend="_classstats_1_1_discrete_distribution">stats::DiscreteDistribution</link><section>
+<title>Descrição detalhada</title>
+
+<para>Uma classe para representar uma distribuição binomial. </para>
+
+
+
+<para>A distribuição binomial é uma distribuição de probabilidade discreta que representa o número de sucessos em um certo número de tentativas.</para>
+
+<para><formalpara><title>Veja também</title>
+
+<para><link xlink:href="https://en.wikipedia.org/wiki/Binomial_distribution">https://en.wikipedia.org/wiki/Binomial_distribution</link> </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Construtores e Destrutores</title>
+<anchor xml:id="_classstats_1_1_binomial_1a336a8548b17f517528ec10ceb83a3a2d"/><section>
+    <title>Binomial()</title>
+<indexterm><primary>Binomial</primary><secondary>stats::Binomial</secondary></indexterm>
+<indexterm><primary>stats::Binomial</primary><secondary>Binomial</secondary></indexterm>
+<para><computeroutput>stats::Binomial::Binomial (int numberOfTrials, double probabilityOfSuccess)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Construtor para o objeto <link linkend="_classstats_1_1_binomial">Binomial</link>. </para>
+</para>
+
+<para>Inicializa o objeto <link linkend="_classstats_1_1_binomial">Binomial</link> com o número de tentativas e a probabilidade.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parâmetros</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>numberOfTrials</entry><entry>
+<para>O numero de tentativas. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>probabilityOfSuccess</entry><entry>
+<para>O valor da probabilidade de sucesso.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Exceções</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>se o número de tentativas ou a probabilidade de sucesso forem inválidas. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Documentação das funções</title>
+<anchor xml:id="_classstats_1_1_binomial_1ac87a253b2742143b05be2abc31f2f6be"/><section>
+    <title>getProbability()</title>
+<indexterm><primary>getProbability</primary><secondary>stats::Binomial</secondary></indexterm>
+<indexterm><primary>stats::Binomial</primary><secondary>getProbability</secondary></indexterm>
+<para><computeroutput>double stats::Binomial::getProbability (int numberOfSuccesses) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Calcula a probabilidade de um dado número de sucessos. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parâmetros</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>numberOfSuccesses</entry><entry>
+<para>O número de sucessos.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Retorna</title>
+
+<para>A probabilidade de um dado número de sucessos. </para>
+</formalpara>
+</para>
+<para>
+Implementa <link linkend="_classstats_1_1_discrete_distribution_1a4759c515929cb7e26f4c454740fe98a5">stats::DiscreteDistribution</link>.</para>
+</section>
+<anchor xml:id="_classstats_1_1_binomial_1a894d368251fd4127674a55299d23e608"/><section>
+    <title>mean()</title>
+<indexterm><primary>mean</primary><secondary>stats::Binomial</secondary></indexterm>
+<indexterm><primary>stats::Binomial</primary><secondary>mean</secondary></indexterm>
+<para><computeroutput>double stats::Binomial::mean ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Calcula a média da distribuição. </para>
+</para>
+
+<para>A média da distribuição binomial é dada pelo numero de tentativas vezes a probabilidade de sucesso.</para>
+
+<para><formalpara><title>Retorna</title>
+
+<para>A média da distribuição. </para>
+</formalpara>
+</para>
+<para>
+Implementa <link linkend="_classstats_1_1_discrete_distribution_1a3852539f59a449400c0543543e4d9473">stats::DiscreteDistribution</link>.</para>
+</section>
+<anchor xml:id="_classstats_1_1_binomial_1a8cd292074568b0121da8d36de7d86978"/><section>
+    <title>setNumberOfTrials()</title>
+<indexterm><primary>setNumberOfTrials</primary><secondary>stats::Binomial</secondary></indexterm>
+<indexterm><primary>stats::Binomial</primary><secondary>setNumberOfTrials</secondary></indexterm>
+<para><computeroutput><link linkend="_classstats_1_1_binomial">Binomial</link> &amp; stats::Binomial::setNumberOfTrials (int numberOfTrials)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Define o número de tentativas. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parâmetros</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>numberOfTrials</entry><entry>
+<para>O novo número de tentativas.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Retorna</title>
+
+<para>Uma referência para o objeto <link linkend="_classstats_1_1_binomial">Binomial</link>.</para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceções</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>se o novo número de tentativas for negativo. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classstats_1_1_binomial_1ad224c396246f6e1a75fe7b5e5b6a1e0e"/><section>
+    <title>setProbabilityOfSuccess()</title>
+<indexterm><primary>setProbabilityOfSuccess</primary><secondary>stats::Binomial</secondary></indexterm>
+<indexterm><primary>stats::Binomial</primary><secondary>setProbabilityOfSuccess</secondary></indexterm>
+<para><computeroutput><link linkend="_classstats_1_1_binomial">Binomial</link> &amp; stats::Binomial::setProbabilityOfSuccess (double probabilityOfSuccess)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Define a probabilidade de sucesso. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parâmetros</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>probabilityOfSuccess</entry><entry>
+<para>A nova probabilidade de sucesso.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Retorna</title>
+
+<para>Uma referência para o objeto <link linkend="_classstats_1_1_binomial">Binomial</link>.</para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceções</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>se a nova probabilidade de sucesso for menor que 0 ou maior que 1. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classstats_1_1_binomial_1a96edc39d8a84d02444f338e1ff5b423d"/><section>
+    <title>variance()</title>
+<indexterm><primary>variance</primary><secondary>stats::Binomial</secondary></indexterm>
+<indexterm><primary>stats::Binomial</primary><secondary>variance</secondary></indexterm>
+<para><computeroutput>double stats::Binomial::variance ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Calcula a variância da distribuição. </para>
+</para>
+
+<para>A variância da distribuição binomial é dada pelo numero de tentativas vezes a probabilidade de sucesso vezes a probabilidade de erro (1 - probabilidade de sucesso).</para>
+
+<para><formalpara><title>Retorna</title>
+
+<para>A variância da distribuição. </para>
+</formalpara>
+</para>
+<para>
+Implementa <link linkend="_classstats_1_1_discrete_distribution_1ad6c651a325f9b856a4de52bf7d87ce0d">stats::DiscreteDistribution</link>.</para>
+</section>
+<para>
+A documentação para essa classe foi gerada a partir do seguinte arquivo:</para>
+src/include/models/<link linkend="__binomial_8hpp">Binomial.hpp</link></section>
+</section>

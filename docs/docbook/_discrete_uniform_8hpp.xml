@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__discrete_uniform_8hpp" xml:lang="pt-BR">
+<title>Referência do Arquivo src/include/models/DiscreteUniform.hpp</title>
+<indexterm><primary>src/include/models/DiscreteUniform.hpp</primary></indexterm>
+<para>
+
+<para>Arquivo de cabeçalho para a classe DiscreteUniform. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;DiscreteDistribution.hpp&quot;<?linebreak?>#include &lt;stdexcept&gt;<?linebreak?></programlisting>Gráfico de dependência de inclusões para DiscreteUniform.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_discrete_uniform_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Componentes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classstats_1_1_discrete_uniform">stats::DiscreteUniform</link></para>
+
+<para>Uma classe para representar uma distribuição discreta uniforme. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descrição detalhada</title>
+
+<para>Arquivo de cabeçalho para a classe DiscreteUniform. </para>
+
+<para><formalpara><title>Autor</title>
+
+<para>Pedro Lucas (<link xlink:href="mailto:pedrolucas.jsrn@gmail.com">pedrolucas.jsrn@gmail.com</link>) </para>
+</formalpara>
+<formalpara><title>Versão</title>
+
+<para>1.0 </para>
+</formalpara>
+<formalpara><title>Data</title>
+
+<para>2024-10-22</para>
+</formalpara>
+<formalpara><title>Copyright</title>
+
+<para>Copyright (c) 2024 </para>
+</formalpara>
+</para>
+</section>
+</section>

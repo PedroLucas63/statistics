@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__binomial_8hpp_source" xml:lang="pt-BR">
+<title>Binomial.hpp</title>
+<indexterm><primary>src/include/models/Binomial.hpp</primary></indexterm>
+Ir para a documentação desse arquivo.<programlisting linenumbering="unnumbered">1 
+12 <emphasis role="preprocessor">#ifndef&#32;BINOMIAL_HPP_</emphasis>
+13 <emphasis role="preprocessor">#define&#32;BINOMIAL_HPP_</emphasis>
+14 
+15 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__discrete_distribution_8hpp">DiscreteDistribution.hpp</link>&quot;</emphasis>
+16 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__statistical_tools_8hpp">StatisticalTools.hpp</link>&quot;</emphasis>
+17 <emphasis role="preprocessor">#include&#32;&lt;cmath&gt;</emphasis>
+18 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+19 
+20 <emphasis role="keyword">namespace&#32;</emphasis>stats&#32;{
+30 &#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classstats_1_1_binomial">Binomial</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classstats_1_1_discrete_distribution">DiscreteDistribution</link>&#32;{
+31 &#32;&#32;<emphasis role="keyword">private</emphasis>:
+32 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numberOfTrials;
+33 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;probabilityOfSuccess;
+34 
+40 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;checkNumberOfTrials()&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(numberOfTrials&#32;&lt;&#32;0)&#32;{
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Number&#32;of&#32;trials&#32;is&#32;negative&quot;</emphasis>);
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+44 &#32;&#32;&#32;&#32;&#32;&#32;}
+45 
+52 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;checkProbabilityOfSuccess()&#32;{
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(probabilityOfSuccess&#32;&lt;&#32;0&#32;||&#32;probabilityOfSuccess&#32;&gt;&#32;1)&#32;{
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Probability&#32;of&#32;success&#32;is&#32;not&#32;between&#32;0&#32;and&#32;1&quot;</emphasis>);
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+57 &#32;&#32;&#32;&#32;&#32;&#32;}
+58 
+66 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;checkDistribution()&#32;{
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;checkNumberOfTrials();
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;checkProbabilityOfSuccess();
+69 &#32;&#32;&#32;&#32;&#32;&#32;}
+70 
+71 &#32;&#32;<emphasis role="keyword">public</emphasis>:
+84 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classstats_1_1_binomial_1a336a8548b17f517528ec10ceb83a3a2d">Binomial</link>(<emphasis role="keywordtype">int</emphasis>&#32;numberOfTrials,&#32;<emphasis role="keywordtype">double</emphasis>&#32;probabilityOfSuccess)
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;numberOfTrials(numberOfTrials)
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;,&#32;probabilityOfSuccess(probabilityOfSuccess)&#32;{
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;checkDistribution();
+88 &#32;&#32;&#32;&#32;&#32;&#32;}
+89 
+97 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classstats_1_1_binomial_1ac87a253b2742143b05be2abc31f2f6be">getProbability</link>(<emphasis role="keywordtype">int</emphasis>&#32;numberOfSuccesses)<emphasis role="keyword">&#32;const&#32;</emphasis>{
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(numberOfSuccesses&#32;&lt;&#32;0&#32;||&#32;numberOfSuccesses&#32;&gt;&#32;numberOfTrials)&#32;{
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+101 
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;combinations&#32;=&#32;<link linkend="__statistical_tools_8hpp_1a40435961c50cdd42bc3eccc076daa342">combination</link>(numberOfTrials,&#32;numberOfSuccesses);
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;probabilityOfSuccesses
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;std::pow(probabilityOfSuccess,&#32;numberOfSuccesses);
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;probabilityOfFails&#32;=&#32;std::pow(
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;1&#32;-&#32;probabilityOfSuccess,&#32;numberOfTrials&#32;-&#32;numberOfSuccesses);
+107 
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;combinations&#32;*&#32;probabilityOfSuccesses&#32;*&#32;probabilityOfFails;
+109 &#32;&#32;&#32;&#32;&#32;&#32;}
+110 
+120 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classstats_1_1_binomial">Binomial</link>&amp;&#32;<link linkend="_classstats_1_1_binomial_1a8cd292074568b0121da8d36de7d86978">setNumberOfTrials</link>(<emphasis role="keywordtype">int</emphasis>&#32;numberOfTrials)&#32;{
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;numberOfTrials&#32;=&#32;numberOfTrials;
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;checkDistribution();
+123 
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+125 &#32;&#32;&#32;&#32;&#32;&#32;}
+126 
+137 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classstats_1_1_binomial">Binomial</link>&amp;&#32;<link linkend="_classstats_1_1_binomial_1ad224c396246f6e1a75fe7b5e5b6a1e0e">setProbabilityOfSuccess</link>(<emphasis role="keywordtype">double</emphasis>&#32;probabilityOfSuccess)&#32;{
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;probabilityOfSuccess&#32;=&#32;probabilityOfSuccess;
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;checkDistribution();
+140 
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+142 &#32;&#32;&#32;&#32;&#32;&#32;}
+143 
+152 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classstats_1_1_binomial_1a894d368251fd4127674a55299d23e608">mean</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{&#32;<emphasis role="keywordflow">return</emphasis>&#32;numberOfTrials&#32;*&#32;probabilityOfSuccess;&#32;}
+153 
+163 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classstats_1_1_binomial_1a96edc39d8a84d02444f338e1ff5b423d">variance</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;numberOfTrials&#32;*&#32;probabilityOfSuccess
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;(1&#32;-&#32;probabilityOfSuccess);
+166 &#32;&#32;&#32;&#32;&#32;&#32;}
+167 &#32;&#32;&#32;};
+168 }
+169 
+170 <emphasis role="preprocessor">#endif&#32;</emphasis>
+</programlisting></section>

@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Estatística: Código-Fonte de src/include/models/Geometric.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="abacus_1f9ee (2).png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Estatística<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Provê bibliotecas para o cálculo de estatística básica e de probabilidade de modelos discretos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_geometric_8hpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Geometric.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_geometric_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef GEOMETRIC_HPP_</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define GEOMETRIC_HPP_</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_discrete_distribution_8hpp.html">DiscreteDistribution.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span>stats {</div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classstats_1_1_geometric.html">   30</a></span>   <span class="keyword">class </span><a class="code hl_class" href="classstats_1_1_geometric.html">Geometric</a> : <span class="keyword">public</span> <a class="code hl_class" href="classstats_1_1_discrete_distribution.html">DiscreteDistribution</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      <span class="keywordtype">double</span> probabilityOfSuccess;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <span class="keywordtype">void</span> checkProbabilityOfSuccess() {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>         <span class="keywordflow">if</span> (probabilityOfSuccess &lt; 0 || probabilityOfSuccess &gt; 1) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">throw</span> std::runtime_error(</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>              <span class="stringliteral">&quot;Probability of success is not between 0 and 1&quot;</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>         }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classstats_1_1_geometric.html#a4cdaa04502a7aacb619277770bbd9a1e">   57</a></span>      <a class="code hl_function" href="classstats_1_1_geometric.html#a4cdaa04502a7aacb619277770bbd9a1e">Geometric</a>(<span class="keywordtype">double</span> probabilityOfSuccess)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>          : probabilityOfSuccess(probabilityOfSuccess) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>         checkProbabilityOfSuccess();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      }</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classstats_1_1_geometric.html#a6979763eb2aab79c2d787ff185d383ae">   76</a></span>      <span class="keywordtype">double</span> <a class="code hl_function" href="classstats_1_1_geometric.html#a6979763eb2aab79c2d787ff185d383ae">getProbability</a>(<span class="keywordtype">int</span> replicasMade)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>         <span class="keywordflow">if</span> (replicasMade &lt; 0) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>         }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>         <span class="keywordflow">return</span> std::pow(1 - probabilityOfSuccess, replicasMade - 1)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>           * probabilityOfSuccess;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      }</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classstats_1_1_geometric.html#a1543eece84d3537c5c8162df08701a0f">   95</a></span>      <a class="code hl_class" href="classstats_1_1_geometric.html">Geometric</a>&amp; <a class="code hl_function" href="classstats_1_1_geometric.html#a1543eece84d3537c5c8162df08701a0f">setProbabilityOfSuccess</a>(<span class="keywordtype">double</span> probabilityOfSuccess) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>         this-&gt;probabilityOfSuccess = probabilityOfSuccess;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>         checkProbabilityOfSuccess();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>         <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classstats_1_1_geometric.html#a384479b12dea81fd41ae7f7344ec48ad">  110</a></span>      <span class="keywordtype">double</span> <a class="code hl_function" href="classstats_1_1_geometric.html#a384479b12dea81fd41ae7f7344ec48ad">mean</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> 1 / probabilityOfSuccess; }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="foldopen" id="foldopen00121" data-start="{" data-end="}">
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classstats_1_1_geometric.html#a4650787fe93b694cb5f8ccdd7b92c0ea">  121</a></span>      <span class="keywordtype">double</span> <a class="code hl_function" href="classstats_1_1_geometric.html#a4650787fe93b694cb5f8ccdd7b92c0ea">variance</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>         <span class="keywordflow">return</span> (1 - probabilityOfSuccess) / std::pow(probabilityOfSuccess, 2);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      }</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>   };</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#endif </span></div>
+<div class="ttc" id="a_discrete_distribution_8hpp_html"><div class="ttname"><a href="_discrete_distribution_8hpp.html">DiscreteDistribution.hpp</a></div><div class="ttdoc">Arquivo de cabeçalho para a classe DiscreteDistribution.</div></div>
+<div class="ttc" id="aclassstats_1_1_discrete_distribution_html"><div class="ttname"><a href="classstats_1_1_discrete_distribution.html">stats::DiscreteDistribution</a></div><div class="ttdoc">Uma classe para representar uma distribuição discreta.</div><div class="ttdef"><b>Definição</b> DiscreteDistribution.hpp:24</div></div>
+<div class="ttc" id="aclassstats_1_1_geometric_html"><div class="ttname"><a href="classstats_1_1_geometric.html">stats::Geometric</a></div><div class="ttdoc">Uma classe para representar uma distribuição geométrica.</div><div class="ttdef"><b>Definição</b> Geometric.hpp:30</div></div>
+<div class="ttc" id="aclassstats_1_1_geometric_html_a1543eece84d3537c5c8162df08701a0f"><div class="ttname"><a href="classstats_1_1_geometric.html#a1543eece84d3537c5c8162df08701a0f">stats::Geometric::setProbabilityOfSuccess</a></div><div class="ttdeci">Geometric &amp; setProbabilityOfSuccess(double probabilityOfSuccess)</div><div class="ttdoc">Define a probabilidade de sucesso da distribuição geométrica.</div><div class="ttdef"><b>Definição</b> Geometric.hpp:95</div></div>
+<div class="ttc" id="aclassstats_1_1_geometric_html_a384479b12dea81fd41ae7f7344ec48ad"><div class="ttname"><a href="classstats_1_1_geometric.html#a384479b12dea81fd41ae7f7344ec48ad">stats::Geometric::mean</a></div><div class="ttdeci">double mean() const</div><div class="ttdoc">Calcula a média da distribuição.</div><div class="ttdef"><b>Definição</b> Geometric.hpp:110</div></div>
+<div class="ttc" id="aclassstats_1_1_geometric_html_a4650787fe93b694cb5f8ccdd7b92c0ea"><div class="ttname"><a href="classstats_1_1_geometric.html#a4650787fe93b694cb5f8ccdd7b92c0ea">stats::Geometric::variance</a></div><div class="ttdeci">double variance() const</div><div class="ttdoc">Calcula a variância da distribuição.</div><div class="ttdef"><b>Definição</b> Geometric.hpp:121</div></div>
+<div class="ttc" id="aclassstats_1_1_geometric_html_a4cdaa04502a7aacb619277770bbd9a1e"><div class="ttname"><a href="classstats_1_1_geometric.html#a4cdaa04502a7aacb619277770bbd9a1e">stats::Geometric::Geometric</a></div><div class="ttdeci">Geometric(double probabilityOfSuccess)</div><div class="ttdoc">Construtor para o objeto Geometric com a probabilidade de sucesso.</div><div class="ttdef"><b>Definição</b> Geometric.hpp:57</div></div>
+<div class="ttc" id="aclassstats_1_1_geometric_html_a6979763eb2aab79c2d787ff185d383ae"><div class="ttname"><a href="classstats_1_1_geometric.html#a6979763eb2aab79c2d787ff185d383ae">stats::Geometric::getProbability</a></div><div class="ttdeci">double getProbability(int replicasMade) const</div><div class="ttdoc">Calcula a probabilidade de um dado número de tentativas antes de obter o primeiro sucesso.</div><div class="ttdef"><b>Definição</b> Geometric.hpp:76</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_ca83ffc64dc9381601738c88f4e696c9.html">models</a></li><li class="navelem"><a class="el" href="_geometric_8hpp.html">Geometric.hpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>
